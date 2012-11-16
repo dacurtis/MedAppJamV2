@@ -8,22 +8,15 @@
 
 #import "IncidentQueueController.h"
 #import "Incident.h"
-@interface IncidentQueueController ()
-- (void)initializeDefaultDataList;
-@end
 @implementation IncidentQueueController
+@synthesize countOfList;
 - (void)initializeDefaultDataList {
     NSMutableArray *incidentList = [[NSMutableArray alloc] init];
-    self.incidentList = incidentList;
-    Incident *defaultIncident;
-    NSDate *time = [NSDate date];
-    defaultIncident= [[Incident alloc] initWithName:@"Incident" atTime:time];
-    [self addIncident:defaultIncident];
-
 }
 
 - (id)init {
     if (self = [super init]) {
+        countOfList = 0;
         return self;
     }
     return nil;
@@ -31,14 +24,17 @@
 - (void) addIncident:(NSString *)name atTime:(NSDate *)date{
     Incident *inc = [[Incident alloc] initWithName:name atTime:date];
     [self.incidentList addObject:inc];
+    self.countOfList++;
 }
 - (void) addIncident: (Incident *) incident{
     [self.incidentList addObject:incident];
+    self.countOfList++;
 }
 - (Incident *)getIndex:(NSUInteger)theIndex {
     return [self.incidentList objectAtIndex:theIndex];
 }
-- (Incident *) removeIncident:(NSUInteger) theIndex {
+- (void) removeIncident:(NSUInteger) theIndex {
     [self.incidentList removeObjectAtIndex:theIndex];
+    self.countOfList--;
 }
 @end

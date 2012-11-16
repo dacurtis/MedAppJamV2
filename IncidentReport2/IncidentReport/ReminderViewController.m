@@ -9,6 +9,7 @@
 #import "ReminderViewController.h"
 #import "DocPath.h"
 #import "IncidentQueueController.h"
+#import "Incident.h"
 
 @interface ReminderViewController ()
 
@@ -42,6 +43,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    [theTextField resignFirstResponder];
+    return YES;
+}
 
 #pragma mark -
 #pragma mark PickerView DataSource
@@ -68,7 +73,6 @@ numberOfRowsInComponent:(NSInteger)component
       inComponent:(NSInteger)component
 {
     self.reminderPeriod = row;
-    NSLog([NSString stringWithFormat:@"%d", row]);
 }
 
 - (IBAction)buttonPressed:(id)sender {
@@ -76,45 +80,40 @@ numberOfRowsInComponent:(NSInteger)component
         switch (reminderPeriod) {
             case 0:
                 reminderPeriod = 0;
-                NSLog(@"Gradually");
                 break;
             case 1:
                 reminderPeriod = 5;
-                NSLog(@"5");
                 break;
             case 2:
                 reminderPeriod = 1;
-                NSLog(@"1");
                 break;
             case 3:
                 reminderPeriod = 2;
-                NSLog(@"2");
                 break;
             case 4:
                 reminderPeriod = 4;
-                NSLog(@"4");
                 break;
             case 5:
                 reminderPeriod = 8;
-                NSLog(@"8");
                 break;
             case 6:
                 reminderPeriod = 12;
-                NSLog(@"12");
                 break;
             case 7:
                 reminderPeriod = 24;
-                NSLog(@"24");
                 break;
             case 8:
                 reminderPeriod = 48;
-                NSLog(@"48");
                 break;
             default:
                 break;
         }
         IncidentQueueController *incidentQueue = [DocPath getPath].incidentQueue;
-        //[incidentQueue addIncident:[Incident init:[descriptionField text] atTime:[NSDate date] withReminderEvery:];
+        [incidentQueue initializeDefaultDataList];
+        //Incident *incident = [[Incident alloc] initWithReportLater:self.description atTime:[NSDate date] withReminderPeriod:self.reminderPeriod];
+        //[incidentQueue addIncident:incident];
+        //incident = [incidentQueue getIndex:*(incidentQueue.countOfList)];
+        //NSLog([[NSString alloc] initWithFormat:@"%@   %d",incident.description, incident.reminderPeriod]);
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
     else if (false); //for other buttons

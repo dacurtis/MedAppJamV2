@@ -9,14 +9,43 @@
 #import "Incident.h"
 
 @implementation Incident
-@synthesize time,title;
+@synthesize time, gradualNotification;
+
 - (id) initWithName:(NSString *)name atTime:(NSDate *) date{
     self = [super init];
     if (self){
-        title = name;
+        self.title = name;
+        self.gradualNotification = NO;
         time = date;
         return self;
     }
     return nil;
+}
+
+- (id)initWithReportLater:(NSString *)title atTime:(NSDate *)date withReminderPeriod:(NSUInteger)reminderPeriod {
+    self = [super init];
+    if (self) {
+        self.title = title;
+        self.time = date;
+        self.gradualNotification = NO;
+        if (reminderPeriod == 0) {
+            self.gradualNotification = YES;
+            self.reminderPeriod = 1;
+        }
+        else
+            self.reminderPeriod = reminderPeriod;
+    }
+    return nil;
+}
+
+- (void)setReminderPeriod:(NSUInteger)reminderPeriod {
+    if (reminderPeriod == 0) {
+        self.gradualNotification = YES;
+        self.reminderPeriod = 1;
+    }
+    else {
+        self.reminderPeriod = reminderPeriod;
+        self.gradualNotification = NO;
+    }
 }
 @end

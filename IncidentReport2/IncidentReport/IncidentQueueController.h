@@ -11,7 +11,9 @@
 
 @interface IncidentQueueController : NSObject
 @property (copy, nonatomic) NSMutableArray *incidentList;
+@property (nonatomic) NSUInteger *countOfList;
 -(void) addIncident:(NSString *)name  atTime:(NSDate *)date;
-- (NSUInteger)countOfList;
+-(void) addIncident:(Incident *)incident;
 - (Incident *)getIndex:(NSUInteger)theIndex;
+- (void)initializeDefaultDataList;
 @end

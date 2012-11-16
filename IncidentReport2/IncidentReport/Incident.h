@@ -11,5 +11,8 @@
 @interface Incident : NSObject
 @property (copy, nonatomic) NSDate *time;
 @property (copy, nonatomic) NSString *title;
+@property (nonatomic) NSUInteger reminderPeriod;
+@property (nonatomic) BOOL gradualNotification;
 - (id)initWithName:(NSString *)title atTime:(NSDate *) date;
+- (id)initWithReportLater:(NSString *)title atTime:(NSDate *)date withReminderPeriod:(NSUInteger)reminderPeriod;
 @end
