@@ -10,10 +10,9 @@
 @class Incident;
 
 @interface IncidentQueueController : NSObject
-@property (copy, nonatomic) NSMutableArray *incidentList;
-@property (nonatomic) NSUInteger *countOfList;
+@property (retain, nonatomic) NSMutableArray *incidentList;
 -(void) addIncident:(NSString *)name  atTime:(NSDate *)date;
 -(void) addIncident:(Incident *)incident;
 - (Incident *)getIndex:(NSUInteger)theIndex;
-- (void)initializeDefaultDataList;
+- (NSUInteger) size;
 @end

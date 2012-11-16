@@ -17,6 +17,7 @@
         self.title = name;
         self.gradualNotification = NO;
         time = date;
+        NSLog(@"creating incident");
         return self;
     }
     return nil;

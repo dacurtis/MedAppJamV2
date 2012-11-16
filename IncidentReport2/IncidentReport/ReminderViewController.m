@@ -108,13 +108,10 @@ numberOfRowsInComponent:(NSInteger)component
             default:
                 break;
         }
-        IncidentQueueController *incidentQueue = [DocPath getPath].incidentQueue;
-        [incidentQueue initializeDefaultDataList];
         NSString *desc = [descriptionField text];
         Incident *incident = [[Incident alloc] initWithName:desc atTime:[NSDate date]];
-        [incidentQueue addIncident:incident];
-        incident = [incidentQueue getIndex:(*(incidentQueue.countOfList) - 1)];
-        NSLog([incident title]);
+        [[DocPath getPath].incidentQueue addIncident:incident];
+        NSLog(@"%d", [[DocPath getPath].incidentQueue size]);
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
     else if (false); //for other buttons

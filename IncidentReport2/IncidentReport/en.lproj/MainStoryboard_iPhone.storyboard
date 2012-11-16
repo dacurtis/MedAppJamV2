@@ -32,6 +32,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="252" id="FCX-yB-awE"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="tsQ-BY-BsO"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aH0-np-s5R">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -81,6 +84,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="incidentTable" destination="Gr7-OY-cq0" id="C3b-KF-XOo"/>
                         <outlet property="settingsButton" destination="XXH-ih-Y0k" id="KmP-Ww-jfW"/>
                     </connections>
                 </viewController>
@@ -206,8 +210,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="fieldChanged:" destination="buw-rG-MbS" eventType="editingDidEnd" id="6Do-LS-L6A"/>
-                                            <outlet property="delegate" destination="buw-rG-MbS" id="7BD-Lg-rEn"/>
+                                            <action selector="fieldChanged:" destination="buw-rG-MbS" eventType="editingDidEnd" id="Rmu-IX-HYK"/>
+                                            <outlet property="delegate" destination="buw-rG-MbS" id="NSQ-s3-8qW"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4s4-10-mxh">
@@ -222,8 +226,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="fieldChanged:" destination="buw-rG-MbS" eventType="editingDidEnd" id="nMu-Bl-NlM"/>
-                                            <outlet property="delegate" destination="buw-rG-MbS" id="8s5-be-qLl"/>
+                                            <action selector="fieldChanged:" destination="buw-rG-MbS" eventType="editingDidEnd" id="p94-7f-Arl"/>
+                                            <outlet property="delegate" destination="buw-rG-MbS" id="GVW-Y3-jjY"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tcf-nA-jAc">
@@ -233,8 +237,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="fieldChanged:" destination="buw-rG-MbS" eventType="editingDidEnd" id="wxd-ps-fXz"/>
-                                            <outlet property="delegate" destination="buw-rG-MbS" id="i80-Ff-6iu"/>
+                                            <action selector="fieldChanged:" destination="buw-rG-MbS" eventType="editingDidEnd" id="pi7-nH-cwq"/>
+                                            <outlet property="delegate" destination="buw-rG-MbS" id="O9O-0V-Rmc"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Phone:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL6-j0-r7z">
@@ -257,8 +261,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="fieldChanged:" destination="buw-rG-MbS" eventType="editingDidEnd" id="Klb-Yn-lK8"/>
-                                            <outlet property="delegate" destination="buw-rG-MbS" id="beb-tO-raP"/>
+                                            <action selector="fieldChanged:" destination="buw-rG-MbS" eventType="editingDidEnd" id="0fn-dr-udh"/>
+                                            <outlet property="delegate" destination="buw-rG-MbS" id="m2d-6n-4oz"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Your Role:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRH-3d-f4G">
@@ -295,7 +299,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="fieldChanged:" destination="buw-rG-MbS" eventType="editingDidEnd" id="bak-zZ-Eop"/>
+                                            <action selector="fieldChanged:" destination="buw-rG-MbS" eventType="editingDidEnd" id="39W-Vv-BHT"/>
+                                            <outlet property="delegate" destination="buw-rG-MbS" id="f6O-1W-w5d"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -314,7 +319,6 @@
                                     <constraint firstItem="LCy-uV-5vP" firstAttribute="top" secondItem="waC-wn-kAs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PE6-S2-HVy"/>
                                     <constraint firstItem="xyz-kw-HFO" firstAttribute="top" secondItem="nSB-3e-GdJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QQC-Dg-71d"/>
                                     <constraint firstItem="LCy-uV-5vP" firstAttribute="leading" secondItem="hRH-3d-f4G" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Sic-uS-LJe"/>
-                                    <constraint firstItem="waC-wn-kAs" firstAttribute="trailing" secondItem="LCy-uV-5vP" secondAttribute="trailing" type="default" id="Yd9-ZQ-g4C"/>
                                     <constraint firstItem="nSB-3e-GdJ" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="44" id="aJj-vN-IYN"/>
                                     <constraint firstItem="nSB-3e-GdJ" firstAttribute="leading" secondItem="lTb-ra-hzM" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="aeU-6B-2yd"/>
                                     <constraint firstItem="lTb-ra-hzM" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="c2G-Tv-wq2"/>
@@ -331,6 +335,7 @@
                                     <constraint firstItem="4s4-10-mxh" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="86" id="uXR-ue-WiE"/>
                                     <constraint firstItem="waC-wn-kAs" firstAttribute="top" secondItem="Tcf-nA-jAc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vYH-Wf-kf3"/>
                                     <constraint firstItem="f3Y-Vc-05p" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yxF-Uq-UNe"/>
+                                    <constraint firstItem="waC-wn-kAs" firstAttribute="trailing" secondItem="xXz-JX-TpG" secondAttribute="trailing" type="default" id="zr0-nt-CzC"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -344,11 +349,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="8CY-0y-iQa"/>
                     <connections>
-                        <outlet property="emailField" destination="xyz-kw-HFO" id="xSu-bQ-iFC"/>
-                        <outlet property="hospitalField" destination="Tcf-nA-jAc" id="9of-Qw-j55"/>
-                        <outlet property="nameField" destination="nSB-3e-GdJ" id="Ldt-7b-EkX"/>
-                        <outlet property="phoneField" destination="waC-wn-kAs" id="Car-Ux-jOR"/>
-                        <outlet property="roleField" destination="xXz-JX-TpG" id="2dp-yk-1UC"/>
+                        <outlet property="emailField" destination="xyz-kw-HFO" id="fUz-De-ysg"/>
+                        <outlet property="hospitalField" destination="waC-wn-kAs" id="BpJ-bv-R6J"/>
+                        <outlet property="nameField" destination="nSB-3e-GdJ" id="BGM-Ve-PNL"/>
+                        <outlet property="phoneField" destination="Tcf-nA-jAc" id="dTt-6f-L8U"/>
+                        <outlet property="roleField" destination="xXz-JX-TpG" id="ImS-OO-l4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZmK-ji-ThY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -383,9 +388,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonPressed:"/>
                 <relationship kind="outlet" name="incidentTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="reportLater" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
