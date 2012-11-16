@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DocPath.h"
+#import "IncidentQueueController.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -27,6 +28,7 @@
     path.path = docPath;
     NSLog(@"%@",path);
     
+    path.incidentQueue = [[IncidentQueueController alloc] init];
     
     return YES;
 }

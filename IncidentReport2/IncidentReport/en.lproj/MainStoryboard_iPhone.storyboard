@@ -96,35 +96,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dwS-bJ-jyM">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="ey3-mn-ANq"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="374532933.01435298">
-                                    <!--2012-11-13 20:55:33 +0000-->
-                                </date>
-                                <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <data key="data">
-VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
-y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
-5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
-8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
-AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
-DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
-HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
-KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
-OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
-Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
-VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
-Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
-cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
-f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
-AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</data>
-                                </timeZone>
-                            </datePicker>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Incident Description:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWg-QK-u3U">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="208" id="y3Q-WO-WZd"/>
@@ -137,7 +108,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Remind me at:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXI-UK-IMu">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Remind me every:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXI-UK-IMu">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="227" id="oz7-6k-eGQ"/>
                                 </constraints>
@@ -145,45 +116,46 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vV-me-cmq">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2co-X7-Xmo">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="7Th-dk-Rvo"/>
-                                    <constraint firstAttribute="width" constant="307" id="bWK-Wj-ong"/>
+                                    <constraint firstAttribute="height" constant="216" id="dPy-DX-BiG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Set Reminder">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                                <connections>
+                                    <outlet property="dataSource" destination="Uuc-YA-Prd" id="N5N-zW-16C"/>
+                                    <outlet property="delegate" destination="Uuc-YA-Prd" id="aQA-vs-XQu"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2co-X7-Xmo" firstAttribute="trailing" secondItem="i0F-IV-czJ" secondAttribute="trailing" type="default" id="0Tu-Ul-YF5"/>
+                            <constraint firstItem="2co-X7-Xmo" firstAttribute="leading" secondItem="i0F-IV-czJ" secondAttribute="leading" type="default" id="2VA-vQ-TYO"/>
                             <constraint firstItem="Y5Q-Pd-K28" firstAttribute="leading" secondItem="i0F-IV-czJ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="5fv-9D-J5A"/>
                             <constraint firstAttribute="trailing" secondItem="Y5Q-Pd-K28" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7JR-L8-JgH"/>
+                            <constraint firstItem="2co-X7-Xmo" firstAttribute="top" secondItem="sXI-UK-IMu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7va-ms-85r"/>
                             <constraint firstItem="HWg-QK-u3U" firstAttribute="top" secondItem="i0F-IV-czJ" secondAttribute="top" constant="20" symbolic="YES" type="default" id="8k5-53-ij0"/>
                             <constraint firstItem="Y5Q-Pd-K28" firstAttribute="top" secondItem="HWg-QK-u3U" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9eP-wL-bYm"/>
-                            <constraint firstItem="4vV-me-cmq" firstAttribute="centerX" secondItem="dwS-bJ-jyM" secondAttribute="centerX" type="default" id="Jeb-u1-MxN"/>
                             <constraint firstItem="sXI-UK-IMu" firstAttribute="top" secondItem="i0F-IV-czJ" secondAttribute="top" constant="98" id="X4v-Jd-3nY"/>
-                            <constraint firstItem="dwS-bJ-jyM" firstAttribute="top" secondItem="sXI-UK-IMu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ku5-ju-zu6"/>
                             <constraint firstItem="HWg-QK-u3U" firstAttribute="leading" secondItem="sXI-UK-IMu" secondAttribute="leading" type="default" id="qMO-HC-or3"/>
                             <constraint firstItem="HWg-QK-u3U" firstAttribute="leading" secondItem="i0F-IV-czJ" secondAttribute="leading" constant="14" id="s16-nv-orM"/>
-                            <constraint firstItem="dwS-bJ-jyM" firstAttribute="centerX" secondItem="Y5Q-Pd-K28" secondAttribute="centerX" type="default" id="sme-9y-HCf"/>
-                            <constraint firstAttribute="bottom" secondItem="4vV-me-cmq" secondAttribute="bottom" constant="5" id="tGc-0V-sjK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Reminder" id="crC-6s-XH5"/>
+                    <navigationItem key="navigationItem" title="Reminder" id="crC-6s-XH5">
+                        <barButtonItem key="rightBarButtonItem" tag="1" systemItem="done" id="Qej-PP-NBp">
+                            <connections>
+                                <action selector="buttonPressed:" destination="Uuc-YA-Prd" id="1rb-O1-kno"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="descriptionField" destination="Y5Q-Pd-K28" id="1dy-QN-TSz"/>
-                        <outlet property="reminderTime" destination="dwS-bJ-jyM" id="fNl-aL-xSv"/>
+                        <outlet property="doneButton" destination="Qej-PP-NBp" id="BxQ-e7-mfm"/>
+                        <outlet property="reminderPicker" destination="2co-X7-Xmo" id="qds-D5-jZt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avP-56-7fk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="686"/>
+            <point key="canvasLocation" x="3" y="578"/>
         </scene>
         <!--View Controller - Report Incident-->
         <scene sceneID="eWe-in-w7M">
@@ -192,7 +164,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <view key="view" contentMode="scaleToFill" id="Y2u-Ha-7p6">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDj-72-YIa"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VDj-72-YIa" firstAttribute="leading" secondItem="Y2u-Ha-7p6" secondAttribute="leading" type="default" id="1U1-By-EPH"/>
+                            <constraint firstItem="VDj-72-YIa" firstAttribute="bottom" secondItem="Y2u-Ha-7p6" secondAttribute="bottom" type="default" id="7tX-oV-Wtn"/>
+                            <constraint firstItem="VDj-72-YIa" firstAttribute="trailing" secondItem="Y2u-Ha-7p6" secondAttribute="trailing" type="default" id="LH8-e5-rXG"/>
+                            <constraint firstItem="VDj-72-YIa" firstAttribute="top" secondItem="Y2u-Ha-7p6" secondAttribute="top" type="default" id="o28-9w-Xak"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Report Incident" id="rda-Vi-XiY"/>
                 </viewController>
@@ -304,17 +285,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <color key="textColor" red="0.29803922770000002" green="0.33725491169999999" blue="0.42352944609999998" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Remind me to Report Later every:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfR-lZ-rwn">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2j-IT-RVk">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="275" id="Im3-1w-VOC"/>
-                                            <constraint firstAttribute="height" constant="216" id="lQ2-Js-UEq"/>
-                                        </constraints>
-                                    </pickerView>
                                     <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xXz-JX-TpG">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="188" id="ETl-aO-ZSr"/>
@@ -335,30 +305,26 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <constraint firstItem="nSB-3e-GdJ" firstAttribute="bottom" secondItem="lTb-ra-hzM" secondAttribute="bottom" type="default" id="7nb-eH-Dku"/>
                                     <constraint firstItem="Tcf-nA-jAc" firstAttribute="leading" secondItem="FL6-j0-r7z" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="CvZ-Xf-Wxd"/>
                                     <constraint firstAttribute="trailing" secondItem="xyz-kw-HFO" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="EM5-fk-ySf"/>
-                                    <constraint firstItem="y2j-IT-RVk" firstAttribute="top" secondItem="dfR-lZ-rwn" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="GXB-mh-87I"/>
                                     <constraint firstItem="FL6-j0-r7z" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="HB0-DI-KKI"/>
-                                    <constraint firstItem="dfR-lZ-rwn" firstAttribute="top" secondItem="qca-QR-ona" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JRH-JS-6kK"/>
                                     <constraint firstItem="hRH-3d-f4G" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="M3A-N3-X7R"/>
                                     <constraint firstAttribute="trailing" secondItem="nSB-3e-GdJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="NTp-JJ-uVM"/>
                                     <constraint firstItem="LCy-uV-5vP" firstAttribute="top" secondItem="waC-wn-kAs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PE6-S2-HVy"/>
                                     <constraint firstItem="xyz-kw-HFO" firstAttribute="top" secondItem="nSB-3e-GdJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QQC-Dg-71d"/>
                                     <constraint firstItem="LCy-uV-5vP" firstAttribute="leading" secondItem="hRH-3d-f4G" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Sic-uS-LJe"/>
-                                    <constraint firstItem="dfR-lZ-rwn" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="VOL-It-e5S"/>
+                                    <constraint firstItem="waC-wn-kAs" firstAttribute="trailing" secondItem="LCy-uV-5vP" secondAttribute="trailing" type="default" id="Yd9-ZQ-g4C"/>
                                     <constraint firstItem="nSB-3e-GdJ" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="44" id="aJj-vN-IYN"/>
                                     <constraint firstItem="nSB-3e-GdJ" firstAttribute="leading" secondItem="lTb-ra-hzM" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="aeU-6B-2yd"/>
                                     <constraint firstItem="lTb-ra-hzM" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="c2G-Tv-wq2"/>
                                     <constraint firstItem="hRH-3d-f4G" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="200" id="e9K-16-jB5"/>
                                     <constraint firstItem="Tcf-nA-jAc" firstAttribute="top" secondItem="xyz-kw-HFO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gug-kW-X8g"/>
-                                    <constraint firstAttribute="bottom" secondItem="y2j-IT-RVk" secondAttribute="bottom" constant="-11" id="hff-YI-NA3"/>
                                     <constraint firstItem="FL6-j0-r7z" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="124" id="iFu-Bg-B2z"/>
                                     <constraint firstAttribute="trailing" secondItem="Tcf-nA-jAc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="jS2-uF-z8h"/>
                                     <constraint firstItem="gWs-vk-CWb" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="27" id="lh7-QY-bSX"/>
-                                    <constraint firstItem="xXz-JX-TpG" firstAttribute="trailing" secondItem="waC-wn-kAs" secondAttribute="trailing" type="default" id="lne-OS-Iv0"/>
-                                    <constraint firstItem="y2j-IT-RVk" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oQj-59-tiu"/>
                                     <constraint firstItem="qca-QR-ona" firstAttribute="leading" secondItem="gWs-vk-CWb" secondAttribute="leading" type="default" id="pj1-fN-Hov"/>
                                     <constraint firstItem="xXz-JX-TpG" firstAttribute="baseline" secondItem="LCy-uV-5vP" secondAttribute="baseline" type="default" id="rme-4Z-gB7"/>
                                     <constraint firstItem="xXz-JX-TpG" firstAttribute="trailing" secondItem="LCy-uV-5vP" secondAttribute="trailing" type="default" id="sdR-JI-kSd"/>
                                     <constraint firstItem="4s4-10-mxh" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tjK-Q8-4Uh"/>
+                                    <constraint firstAttribute="bottom" secondItem="qca-QR-ona" secondAttribute="bottom" constant="242" id="uSa-b7-B8T"/>
                                     <constraint firstItem="4s4-10-mxh" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="86" id="uXR-ue-WiE"/>
                                     <constraint firstItem="waC-wn-kAs" firstAttribute="top" secondItem="Tcf-nA-jAc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vYH-Wf-kf3"/>
                                     <constraint firstItem="f3Y-Vc-05p" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yxF-Uq-UNe"/>
@@ -394,8 +360,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="ReminderViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReminderViewController.h"/>
             <relationships>
+                <relationship kind="action" name="buttonPressed:"/>
                 <relationship kind="outlet" name="descriptionField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="reminderTime" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="reminderPicker" candidateClass="UIPickerView"/>
             </relationships>
         </class>
         <class className="SettingsViewController" superclassName="UIViewController">

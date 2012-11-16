@@ -11,7 +11,7 @@
 #import "DocPath.h"
 
 @implementation DocPath
-@synthesize path;
+@synthesize path, incidentQueue;
 static DocPath *instance =nil;
 
 +(DocPath *)getPath
