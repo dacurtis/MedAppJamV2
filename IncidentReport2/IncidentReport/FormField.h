@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FormField : NSObject
+@interface FormField : UIView;
 @property (nonatomic) BOOL isTextField;
 @property (nonatomic) BOOL isRadioButton;
 @property (nonatomic) BOOL isDropDown;
