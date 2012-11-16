@@ -30,22 +30,12 @@
         self.gradualNotification = NO;
         if (reminderPeriod == 0) {
             self.gradualNotification = YES;
-            self.reminderPeriod = 1;
+            //self.reminderPeriod = 1;
         }
         else
-            self.reminderPeriod = reminderPeriod;
+            ;//self.reminderPeriod = reminderPeriod;
     }
     return nil;
 }
 
-- (void)setReminderPeriod:(NSUInteger)reminderPeriod {
-    if (reminderPeriod == 0) {
-        self.gradualNotification = YES;
-        self.reminderPeriod = 1;
-    }
-    else {
-        self.reminderPeriod = reminderPeriod;
-        self.gradualNotification = NO;
-    }
-}
 @end

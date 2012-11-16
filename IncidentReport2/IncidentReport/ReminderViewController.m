@@ -110,10 +110,11 @@ numberOfRowsInComponent:(NSInteger)component
         }
         IncidentQueueController *incidentQueue = [DocPath getPath].incidentQueue;
         [incidentQueue initializeDefaultDataList];
-        //Incident *incident = [[Incident alloc] initWithReportLater:self.description atTime:[NSDate date] withReminderPeriod:self.reminderPeriod];
-        //[incidentQueue addIncident:incident];
-        //incident = [incidentQueue getIndex:*(incidentQueue.countOfList)];
-        //NSLog([[NSString alloc] initWithFormat:@"%@   %d",incident.description, incident.reminderPeriod]);
+        NSString *desc = [descriptionField text];
+        Incident *incident = [[Incident alloc] initWithName:desc atTime:[NSDate date]];
+        [incidentQueue addIncident:incident];
+        incident = [incidentQueue getIndex:(*(incidentQueue.countOfList) - 1)];
+        NSLog([incident title]);
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
     else if (false); //for other buttons

@@ -13,7 +13,7 @@
 @property (strong, nonatomic) NSArray *reminderOptions;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 @property (strong, nonatomic) IBOutlet UIPickerView *reminderPicker;
-@property (nonatomic) NSInteger reminderPeriod;
+@property (nonatomic) NSUInteger reminderPeriod;
 - (IBAction)buttonPressed:(id)sender;
 
 @end
