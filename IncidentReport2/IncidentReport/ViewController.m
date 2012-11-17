@@ -50,7 +50,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.incidentTitles objectAtIndex:section];
+    return @"Unreported Incidents:";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -76,8 +76,21 @@
     cell.textLabel.text = title;
     cell.detailTextLabel.text = date;
     
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+   if([indexPath item] != 0)
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
+}
+
+#pragma mark -
+#pragma mark IncidentTable Delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if([indexPath item] != 0) {
+        NSLog(@"row selected");
+        [self performSegueWithIdentifier:@"reportNow" sender:[tableView cellForRowAtIndexPath:indexPath]];
+        // ([indexPath item] - 1 ) is also the corresponding index of the unreported incident in our global variable incidentQueue...
+        // so can pass [[DocPath getPath].incidentQueue getIndex:([indexPath item] - 1)] as sender to be caught in ReportNowController
+        // to reference the specific incident.
+    }
 }
 @end

@@ -57,6 +57,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="2" id="tsQ-BY-BsO"/>
+                                    <outlet property="delegate" destination="2" id="oGa-ty-Zff"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aH0-np-s5R">
@@ -69,7 +70,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0Cm-Ld-kht" kind="push" id="Uyg-Eu-0Vw"/>
+                                    <segue destination="0Cm-Ld-kht" kind="push" identifier="reportNow" id="Uyg-Eu-0Vw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="ReminderViewController" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxx-Zz-NFN">
