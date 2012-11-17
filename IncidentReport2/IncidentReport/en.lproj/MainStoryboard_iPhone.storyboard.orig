@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mhe-MH-CBx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mhe-MH-CBx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
@@ -32,29 +32,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="252" id="FCX-yB-awE"/>
                                 </constraints>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="tnB-Vb-4xr" detailTextLabel="617-Bj-iVf" style="IBUITableViewCellStyleSubtitle" id="0jh-RN-WuF">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnB-Vb-4xr">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="617-Bj-iVf">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="2" id="tsQ-BY-BsO"/>
                                 </connections>
@@ -88,15 +65,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="cxx-Zz-NFN" secondAttribute="bottom" constant="38" id="HY3-SO-Nl1"/>
                             <constraint firstItem="Gr7-OY-cq0" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="PRa-G8-fbu"/>
+                            <constraint firstAttribute="bottom" secondItem="cxx-Zz-NFN" secondAttribute="bottom" constant="90" id="QIa-fU-x3Q"/>
+                            <constraint firstAttribute="bottom" secondItem="aH0-np-s5R" secondAttribute="bottom" constant="165" id="RdQ-2r-vyw"/>
                             <constraint firstItem="Gr7-OY-cq0" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="U62-aD-A17"/>
                             <constraint firstItem="aH0-np-s5R" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="W5b-P4-3bL"/>
                             <constraint firstItem="Gr7-OY-cq0" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="hqb-uh-42P"/>
                             <constraint firstAttribute="trailing" secondItem="cxx-Zz-NFN" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ixI-6v-K6P"/>
                             <constraint firstItem="cxx-Zz-NFN" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lq5-zV-Blh"/>
                             <constraint firstAttribute="trailing" secondItem="aH0-np-s5R" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tZD-o7-hzf"/>
-                            <constraint firstAttribute="bottom" secondItem="aH0-np-s5R" secondAttribute="bottom" constant="113" id="xQK-TM-8Ar"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Incident Reporter" id="S3t-3V-gCi">
@@ -395,9 +372,12 @@
                                     <constraint firstItem="Tcf-nA-jAc" firstAttribute="trailing" secondItem="waC-wn-kAs" secondAttribute="trailing" type="default" id="Pez-rk-uwP"/>
                                     <constraint firstItem="xyz-kw-HFO" firstAttribute="top" secondItem="nSB-3e-GdJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QQC-Dg-71d"/>
                                     <constraint firstItem="LCy-uV-5vP" firstAttribute="leading" secondItem="hRH-3d-f4G" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Sic-uS-LJe"/>
+<<<<<<< HEAD
+=======
                                     <constraint firstItem="hRH-3d-f4G" firstAttribute="baseline" secondItem="xXz-JX-TpG" secondAttribute="baseline" type="default" id="StN-cz-QNL"/>
                                     <constraint firstItem="LCy-uV-5vP" firstAttribute="trailing" secondItem="Tcf-nA-jAc" secondAttribute="trailing" type="default" id="YOE-d9-r1x"/>
                                     <constraint firstItem="xXz-JX-TpG" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="197" id="ZQu-rZ-NaS"/>
+>>>>>>> 0c2a1ff4a93d925d57fdd53fae45676cf8acdc47
                                     <constraint firstItem="nSB-3e-GdJ" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="44" id="aJj-vN-IYN"/>
                                     <constraint firstItem="lTb-ra-hzM" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="c2G-Tv-wq2"/>
                                     <constraint firstItem="FL6-j0-r7z" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fnY-cU-Wbj"/>
@@ -414,8 +394,11 @@
                                     <constraint firstItem="nSB-3e-GdJ" firstAttribute="leading" secondItem="xyz-kw-HFO" secondAttribute="leading" type="default" id="w8u-JX-8rK"/>
                                     <constraint firstItem="LCy-uV-5vP" firstAttribute="top" secondItem="Tcf-nA-jAc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="weE-wH-v9O"/>
                                     <constraint firstItem="f3Y-Vc-05p" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yxF-Uq-UNe"/>
-                                    <constraint firstItem="4s4-10-mxh" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zTq-R5-1Ej"/>
+<<<<<<< HEAD
                                     <constraint firstItem="waC-wn-kAs" firstAttribute="trailing" secondItem="xXz-JX-TpG" secondAttribute="trailing" type="default" id="zr0-nt-CzC"/>
+=======
+                                    <constraint firstItem="4s4-10-mxh" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zTq-R5-1Ej"/>
+>>>>>>> 0c2a1ff4a93d925d57fdd53fae45676cf8acdc47
                                 </constraints>
                             </scrollView>
                         </subviews>

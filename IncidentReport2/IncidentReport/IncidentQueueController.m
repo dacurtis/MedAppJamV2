@@ -33,7 +33,6 @@
     [self.incidentList removeObjectAtIndex:theIndex];
 }
 - (NSUInteger) size {
-    NSLog(@"printing count:");
     return [self.incidentList count];
 }
 @end

@@ -11,7 +11,8 @@
 @interface ViewController : UIViewController <UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *incidentTable;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
-@property (strong, nonatomic) NSMutableArray *unreportedIncidents;
+@property (strong, nonatomic) NSMutableArray *incidentTitles;
+@property (strong, nonatomic) NSMutableArray *incidentDates;
 
 
 @end

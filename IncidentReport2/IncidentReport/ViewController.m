@@ -16,7 +16,7 @@
 @end
 
 @implementation ViewController
-@synthesize unreportedIncidents;
+@synthesize incidentTitles, incidentDates;
 
 - (void)viewDidLoad
 {
@@ -25,10 +25,12 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    unreportedIncidents = [[NSMutableArray alloc] initWithObjects:@"    ", nil];
+    incidentTitles = [[NSMutableArray alloc] initWithObjects:@"Description of Unreported Incident", nil];
+    incidentDates = [[NSMutableArray alloc] initWithObjects:@"Date Reported", nil];
     IncidentQueueController *incidentQueue = [DocPath getPath].incidentQueue;
     for(int i = 0; i < [incidentQueue size]; i++) {
-        [self.unreportedIncidents addObject:[[incidentQueue getIndex:i] title] ];
+        [self.incidentTitles addObject:[[incidentQueue getIndex:i] title] ];
+        [self.incidentDates addObject:[[incidentQueue getIndex:i].time description]];
     }
 [self.incidentTable reloadData];
 }
@@ -48,22 +50,31 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.unreportedIncidents objectAtIndex:section];
+    return [self.incidentTitles objectAtIndex:section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.unreportedIncidents count];
+    return [self.incidentTitles count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    UITableViewCell *cell = nil;
+    
+    cell = [tableView dequeueReusableCellWithIdentifier:@"incidentCell"];
+    
+    if(cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"incidentCell"];
+    }
     
     // Configure the cell...
-    NSString *title = [self.unreportedIncidents objectAtIndex:indexPath.row];
+    NSString *title = [self.incidentTitles objectAtIndex:indexPath.row];
+    NSString *date = [self.incidentDates objectAtIndex:indexPath.row];
     
     cell.textLabel.text = title;
+    cell.detailTextLabel.text = date;
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
