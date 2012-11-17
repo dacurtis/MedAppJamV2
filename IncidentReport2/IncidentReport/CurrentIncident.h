@@ -12,4 +12,5 @@
     Incident *currentIncident;
 }
 @property(nonatomic,retain)Incident *currentIncident;
++(CurrentIncident*) getIncident;
 @end

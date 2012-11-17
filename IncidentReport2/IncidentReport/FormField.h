@@ -20,5 +20,5 @@
 //How many lines is the text field?
 @property (nonatomic) NSUInteger count;
 //initialize with a string of all lowercase letters, either textfield, radio, counter,checkbox
--(FormField *) initWithType:(NSString *) formType andLabel:(NSString *) label;
+-(FormField *) initWithType:(NSString *) formType andLabel:(NSString *) description;
 @end

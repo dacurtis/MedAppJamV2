@@ -7,13 +7,14 @@
 //
 
 #import "GenerableViewController.h"
+#import "CurrentIncident.h"
 
 @interface GenerableViewController ()
 
 @end
 
 @implementation GenerableViewController
-
+@synthesize incident;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,7 +27,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	//[CurrentIncident]
+	//incident = [CurrentIncident getIncident].currentIncident;
+    incident = [[Incident alloc] initWithName:@"test" atTime:[NSDate date]];
+    [incident addField:@"Test" ofType:@"textfield"];
+    NSLog(@"%d",[incident form].count);
+    FormField *form = [[FormField alloc] initWithType:@"textfield" andLabel:@"Test"];
+    [self.view addSubview:form];
+    for(NSString * entry in [incident form]){
+        NSLog(@"%@",@"in loop");
+        FormField *form = [[FormField alloc] initWithType:@"textfield" andLabel:@"Tester"];
+        [self.view addSubview:form];
+    }
 }
 
 - (void)didReceiveMemoryWarning

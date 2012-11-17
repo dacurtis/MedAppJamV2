@@ -11,16 +11,18 @@
 @implementation FormField
 @synthesize isDropDown,isTextField,properties,count,isSwitch,isCounter;
 
--(FormField *)initWithType:(NSString *) formType andLabel:(NSString *)label{
+-(FormField *)initWithType:(NSString *) formType andLabel:(NSString *)description{
     self = [super initWithFrame:CGRectMake(10, 10, 300, 300)];
     if (self == nil){
         return nil;
     }
-    label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 250, 20)];
-    [self addSubview:label];
+    self.label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 250, 20)];
+    [self.label setText:description];
+    [self addSubview:self.label];
     if ([formType isEqual:@"textfield"]){
         self.isTextField = YES;
-        self.field = [[UITextView alloc] initWithFrame:CGRectMake(30, 40, 250, 30)];
+        self.field = [[UITextField alloc] initWithFrame:CGRectMake(30, 40, 250, 30)];
+        ((UITextField*)self.field).borderStyle = UITextBorderStyleRoundedRect;
     }
     else if ([formType isEqual:@"dropdown"]){
         self.isDropDown = YES;
@@ -35,7 +37,7 @@
         self.isSwitch = YES;
         self.field = [[UISwitch alloc] initWithFrame:CGRectMake(30, 40, 30, 30)];
     }
-    
+    [self insertSubview:self.field belowSubview:self.label];
     return self;
 }
 

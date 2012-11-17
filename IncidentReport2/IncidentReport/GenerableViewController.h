@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FormField.h"
+#import "Incident.h"
 
 @interface GenerableViewController : UIViewController
 @property (nonatomic, retain) FormField *field;
+@property (nonatomic, retain) Incident *incident;
 @end

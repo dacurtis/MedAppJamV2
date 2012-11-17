@@ -39,4 +39,11 @@
     return nil;
 }
 
+- (void) addField:(NSString *)description ofType:(NSString *)type{
+    [self.form addObject:description];
+    [self.form setValue:nil forKey:description];
+    [self.map addObject:description];
+    [self.map setValue:type forKey:description];
+}
+
 @end
