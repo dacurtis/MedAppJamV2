@@ -15,4 +15,5 @@
 @property (nonatomic) BOOL gradualNotification;
 - (id)initWithName:(NSString *)title atTime:(NSDate *) date;
 - (id)initWithReportLater:(NSString *)title atTime:(NSDate *)date withReminderPeriod:(NSUInteger)reminderPeriod;
+@property (nonatomic, retain) NSMutableDictionary *form;
 @end

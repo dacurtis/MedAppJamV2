@@ -9,7 +9,7 @@
 #import "Incident.h"
 
 @implementation Incident
-@synthesize time, gradualNotification;
+@synthesize time, gradualNotification,form;
 
 - (id) initWithName:(NSString *)name atTime:(NSDate *) date{
     self = [super init];

@@ -10,10 +10,8 @@
 #import "IncidentQueueController.h"
 
 @interface DocPath : NSObject{
-    
     NSString *path;
     IncidentQueueController *incidentQueue;
-    
 }
 @property(nonatomic,retain)NSString *path;
 @property(nonatomic,retain)IncidentQueueController *incidentQueue;
