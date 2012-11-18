@@ -30,7 +30,7 @@
     IncidentQueueController *incidentQueue = [DocPath getPath].incidentQueue;
     for(int i = 0; i < [incidentQueue size]; i++) {
         [self.incidentTitles addObject:[[incidentQueue getIndex:i] title] ];
-        [self.incidentDates addObject:[[incidentQueue getIndex:i].time description]];
+        [self.incidentDates addObject:[[incidentQueue getIndex:i].time descriptionWithLocale:[NSLocale currentLocale]]];
     }
 [self.incidentTable reloadData];
 }
@@ -76,8 +76,10 @@
     cell.textLabel.text = title;
     cell.detailTextLabel.text = date;
     
-   if([indexPath item] != 0)
+    if([indexPath item] != 0)
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    else
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
@@ -88,9 +90,6 @@
     if([indexPath item] != 0) {
         NSLog(@"row selected");
         [self performSegueWithIdentifier:@"reportNow" sender:[tableView cellForRowAtIndexPath:indexPath]];
-        // ([indexPath item] - 1 ) is also the corresponding index of the unreported incident in our global variable incidentQueue...
-        // so can pass [[DocPath getPath].incidentQueue getIndex:([indexPath item] - 1)] as sender to be caught in ReportNowController
-        // to reference the specific incident.
     }
 }
 @end

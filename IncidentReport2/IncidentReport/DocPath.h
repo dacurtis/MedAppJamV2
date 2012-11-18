@@ -12,8 +12,10 @@
 @interface DocPath : NSObject{
     NSString *path;
     IncidentQueueController *incidentQueue;
+    NSMutableData *incidentData;
 }
 @property(nonatomic,retain)NSString *path;
 @property(nonatomic,retain)IncidentQueueController *incidentQueue;
+@property(nonatomic,retain)NSMutableData *incidentData;
 +(DocPath*) getPath;
 @end

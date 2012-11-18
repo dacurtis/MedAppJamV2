@@ -9,6 +9,7 @@
 #import "IncidentQueueController.h"
 #import "Incident.h"
 @implementation IncidentQueueController
+@synthesize incidentList;
 
 - (id)init {
     self = [super init];
@@ -35,4 +36,5 @@
 - (NSUInteger) size {
     return [self.incidentList count];
 }
+
 @end

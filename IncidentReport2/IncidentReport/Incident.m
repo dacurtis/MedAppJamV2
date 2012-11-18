@@ -9,7 +9,7 @@
 #import "Incident.h"
 
 @implementation Incident
-@synthesize time, gradualNotification,form;
+@synthesize time, title, gradualNotification,form;
 
 - (id) initWithName:(NSString *)name atTime:(NSDate *) date{
     self = [super init];
@@ -44,6 +44,21 @@
     [self.form setValue:nil forKey:description];
     [self.map addObject:description];
     [self.map setValue:type forKey:description];
+}
+
+#pragma IncidentQueueController NSCoding
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.description forKey:@"Title"];
+    [aCoder encodeObject:self.time forKey:@"Time"];
+
+}
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    if (self) {
+        self.title = [aDecoder decodeObjectForKey:@"Title"];
+        self.time = [aDecoder decodeObjectForKey:@"Time"];
+    }
+    return self;
 }
 
 @end

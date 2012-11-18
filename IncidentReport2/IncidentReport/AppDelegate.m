@@ -9,26 +9,32 @@
 #import "AppDelegate.h"
 #import "DocPath.h"
 #import "IncidentQueueController.h"
+#import "Incident.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     //Gets the bundle and saves the settings in the docPath.
-    
-    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    docPath = [docPath stringByAppendingPathComponent:@"nmsettings.plist"];
+    NSString *dest = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *docPath = [dest stringByAppendingPathComponent:@"nmsettings.plist"];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"settings" ofType: @"plist"];
     [fileManager copyItemAtPath:bundlePath toPath:docPath error:nil];
-    NSLog(@"File copied!");
+    //NSLog(@"File copied!");
     
     DocPath *path = [DocPath getPath];
     path.path = docPath;
-    NSLog(@"%@",path);
+    //NSLog(@"%@",path);
     
     path.incidentQueue = [[IncidentQueueController alloc] init];
+    
+    NSString *arrayPath = [dest stringByAppendingPathComponent:@"incidentArray.plist"];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:arrayPath];
+    NSKeyedUnarchiver *decode = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+    NSMutableArray *array = [decode decodeObjectForKey:@"incidentArray"];
+    [[DocPath getPath].incidentQueue setIncidentList:array];
     
     return YES;
 }
@@ -41,6 +47,32 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSString *docsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *appDir = [[NSBundle mainBundle] resourcePath];
+    NSString *src = [appDir stringByAppendingPathComponent: @"new.plist"];
+    IncidentQueueController *incidentQueue = [DocPath getPath].incidentQueue;
+    NSMutableArray *incidentArray = [incidentQueue incidentList];
+    NSString *dest = [docsDir stringByAppendingPathComponent: (@"incidentArray.plist")];
+    
+    NSMutableData *tmp = [NSMutableData data];
+    NSKeyedArchiver *encode = [[NSKeyedArchiver alloc] initForWritingWithMutableData:tmp];
+    
+    [encode encodeObject:incidentArray forKey:@"incidentArray"];
+    [encode finishEncoding];
+    
+    if ([fileManager fileExistsAtPath:dest]) {
+        [tmp writeToFile:dest atomically: YES];
+        NSLog(@"Services array(Overwritten): %@", incidentArray);
+    }else {
+        [fileManager copyItemAtPath: src toPath: dest error: &error];
+        [tmp writeToFile:dest atomically: YES];
+        NSLog(@"Services array(New): %@", incidentArray);
+    }
+    
+    //[encode finalize];
+    
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }

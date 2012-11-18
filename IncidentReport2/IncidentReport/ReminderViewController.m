@@ -112,6 +112,28 @@ numberOfRowsInComponent:(NSInteger)component
         Incident *incident = [[Incident alloc] initWithName:desc atTime:[NSDate date]];
         [[DocPath getPath].incidentQueue addIncident:incident];
         NSLog(@"%d", [[DocPath getPath].incidentQueue size]);
+        
+        
+        
+       /* NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSString *dest = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSLog(dest);
+        
+        NSMutableData *tempData = [NSMutableData data];
+        NSKeyedArchiver *coder = [[NSKeyedArchiver alloc] initForWritingWithMutableData:tempData];
+        IncidentQueueController *incidentQueue = [DocPath getPath].incidentQueue;
+        for (int i = 0; i < [incidentQueue size]; i++)
+            [coder encodeObject:[incidentQueue getIndex:i] forKey:@"incidentData"];
+        NSLog(@"%d", [tempData length]);
+        if([fileManager fileExistsAtPath:dest]) {
+            NSLog(@"path exists");
+            [tempData writeToFile:dest atomically:YES];
+        }
+        NSLog(@"%d", [tempData length]);
+        [coder finishEncoding];*/
+        
+        
+        
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
     else if (false); //for other buttons

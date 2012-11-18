@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Incident : NSObject
+@interface Incident : NSObject <NSCoding>
 @property (copy, nonatomic) NSDate *time;
 @property (copy, nonatomic) NSString *title;
 @property (nonatomic) NSUInteger reminderPeriod;
