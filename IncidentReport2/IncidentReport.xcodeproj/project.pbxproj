@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4183766D16597772006CC649 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4183766C16597772006CC649 /* MessageUI.framework */; };
 		4195569C1656F9F2008A5003 /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195569B1656F9F2008A5003 /* FormViewController.m */; };
 		419556A016570B57008A5003 /* GenerableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195569F16570B57008A5003 /* GenerableViewController.m */; };
 		419556A3165712E3008A5003 /* CurrentIncident.m in Sources */ = {isa = PBXBuildFile; fileRef = 419556A2165712E3008A5003 /* CurrentIncident.m */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4183766C16597772006CC649 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4195569A1656F9F2008A5003 /* FormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewController.h; sourceTree = "<group>"; };
 		4195569B1656F9F2008A5003 /* FormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewController.m; sourceTree = "<group>"; };
 		4195569E16570B57008A5003 /* GenerableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerableViewController.h; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4183766D16597772006CC649 /* MessageUI.framework in Frameworks */,
 				A9A9D39A1651EE6200288D07 /* UIKit.framework in Frameworks */,
 				A9A9D39C1651EE6200288D07 /* Foundation.framework in Frameworks */,
 				A9A9D39E1651EE6200288D07 /* CoreGraphics.framework in Frameworks */,
@@ -130,6 +133,7 @@
 		A9A9D38A1651EE6200288D07 = {
 			isa = PBXGroup;
 			children = (
+				4183766C16597772006CC649 /* MessageUI.framework */,
 				A9A9D39F1651EE6200288D07 /* IncidentReport */,
 				A9A9D3C61651EE6300288D07 /* IncidentReportTests */,
 				A9A9D3981651EE6200288D07 /* Frameworks */,

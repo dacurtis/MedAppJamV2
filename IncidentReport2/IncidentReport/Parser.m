@@ -8,6 +8,8 @@
 
 #import "Parser.h"
 #import "CurrentIncident.h"
+#import "FormQuestion.h"
+#import "GlobalVars.h"
 
 @implementation Parser
 @synthesize hospital;
@@ -27,9 +29,36 @@ NSString * ip = @"RYAN'S SERVER'S IP ADDRESS GOES HERE";
      CODE TO TAKE THE CURRENT INCIDENT AND SET EACH VALUE IN ITS FORM QUESTION
      ARRAY TO THE VALUES FROM THE PARSE STRING GOES HERE
      */
+    //REGEXES
+    NSRegularExpression *nameRegex= [NSRegularExpression regularExpressionWithPattern:@".*Name:" options:NSRegularExpressionCaseInsensitive error:NULL];
+    
+
     NSArray * questions = [self.formString componentsSeparatedByString:@"~"];
+    NSMutableArray *form = [[NSMutableArray alloc] init];
+    NSDictionary *settings = [[NSDictionary alloc] initWithContentsOfFile:[GlobalVars getVar].path];
+    NSArray * names = [[settings objectForKey:@"Name"] componentsSeparatedByString:@" "];
     for (NSString * question in questions){
+        NSArray * qAndT = [question componentsSeparatedByString:@"|"];
+        NSString * q = [qAndT objectAtIndex:0];
+        FormQuestion *fq = [[FormQuestion alloc] initWithQuestion:q withType:[qAndT objectAtIndex:1]];
+        [form addObject:fq];
         
+        if ([nameRegex numberOfMatchesInString:q options:0 range:NSMakeRange(0, [q length])] > 0){
+            
+            
+            if ([[q uppercaseString] isEqualToString:@"FIRST NAME:"]){
+                [fq setAnswer:[names objectAtIndex:0]];
+            }
+            else if([[q uppercaseString] isEqualToString:@"LAST NAME:"]){
+                [fq setAnswer:[names objectAtIndex:([names count]-1)]];
+            }
+            else
+                [fq setAnswer:[settings objectForKey: @"Name"]];
+                
+        }
+        else if ([settings objectForKey:q]){
+            [fq setAnswer:[settings objectForKey:q]];
+        }
     }
     
 }

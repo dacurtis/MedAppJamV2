@@ -11,6 +11,7 @@
 @implementation FormQuestion
 @synthesize question, type, answer;
 
+@synthesize answer, question,type;
 - (id)initWithQuestion:(NSString *)question withType:(NSString *)type {
     self = [super init];
     if (self != nil) {
