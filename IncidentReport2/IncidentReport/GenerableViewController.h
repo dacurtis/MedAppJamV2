@@ -10,7 +10,9 @@
 #import "FormField.h"
 #import "Incident.h"
 
-@interface GenerableViewController : UIViewController
+@interface GenerableViewController : UIViewController <UITextFieldDelegate>
 @property (nonatomic, retain) FormField *field;
 @property (nonatomic, retain) Incident *incident;
+@property (nonatomic, retain) NSMutableArray *formFields;
+@property (nonatomic, retain) UIView *view;
 @end

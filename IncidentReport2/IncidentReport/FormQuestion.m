@@ -9,6 +9,8 @@
 #import "FormQuestion.h"
 
 @implementation FormQuestion
+@synthesize question, type, answer;
+
 - (id)initWithQuestion:(NSString *)question withType:(NSString *)type {
     self = [super init];
     if (self != nil) {

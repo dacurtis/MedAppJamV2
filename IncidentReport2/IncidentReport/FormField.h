@@ -8,17 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FormField : UIView;
+@interface FormField : UIView
 @property (nonatomic) BOOL isTextField;
 @property (nonatomic) BOOL isDropDown;
 @property (nonatomic) BOOL isCounter;
 @property (nonatomic) BOOL isSwitch;
 @property (nonatomic, retain) UITextView *label;
-@property (nonatomic, retain) UIView *field;
+@property (nonatomic, retain) UITextField *field;
+@property (nonatomic) float height;
 //Each Option
+@property (weak, nonatomic) NSMutableArray *formFields;
 @property (weak, nonatomic) NSMutableArray *properties;
 //How many lines is the text field?
 @property (nonatomic) NSUInteger count;
 //initialize with a string of all lowercase letters, either textfield, radio, counter,checkbox
--(FormField *) initWithType:(NSString *) formType andLabel:(NSString *) description;
+-(FormField *) initWithType:(NSString *) formType andLabel:(NSString *) description appendingPixels:(float)height withTag:(NSUInteger)tag;
 @end
