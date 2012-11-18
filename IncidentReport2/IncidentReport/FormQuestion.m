@@ -2,18 +2,16 @@
 //  FormQuestion.m
 //  IncidentReport
 //
-//  Created by Matt Gardner on 11/17/12.
+//  Created by Matt Gardner on 11/18/12.
 //  Copyright (c) 2012 MedAppJam. All rights reserved.
 //
 
 #import "FormQuestion.h"
 
 @implementation FormQuestion
-@synthesize type, question, answer;
-
-- (id) initWithQuestion:(NSString *)type withType:(NSString *)type {
+- (id)initWithQuestion:(NSString *)question withType:(NSString *)type {
     self = [super init];
-    if(self){
+    if (self != nil) {
         self.type = type;
         self.question = question;
         return self;

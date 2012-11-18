@@ -13,7 +13,7 @@
 @property (copy, nonatomic) NSString *title;
 @property (nonatomic) NSUInteger reminderPeriod;
 @property (nonatomic) BOOL gradualNotification;
+@property(nonatomic,retain)NSMutableArray *formQuestions;
 - (id)initWithName:(NSString *)title atTime:(NSDate *) date;
 - (id)initWithReportLater:(NSString *)title atTime:(NSDate *)date withReminderPeriod:(NSUInteger)reminderPeriod;
-@property (nonatomic, retain) NSMutableArray *formQuestions;
 @end

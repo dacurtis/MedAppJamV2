@@ -8,6 +8,7 @@
 
 #import "GenerableViewController.h"
 #import "CurrentIncident.h"
+#import "FormQuestion.h"
 
 @interface GenerableViewController ()
 
@@ -26,16 +27,21 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad]; //work on this
-	/*incident = [CurrentIncident getIncident].currentIncident;
-    NSLog(@"%d",[incident]);
-    FormField *form = [[FormField alloc] initWithType:@"textfield" andLabel:@"Test"];
-    [self.view addSubview:form];
-    for(int i =0; i < [[incident form] count]; i++){
-        NSLog(@"%@",@"in loop");
-        FormField *form = [[FormField alloc] initWithType:@"textfield" andLabel:@"Tester"];
-        [self.view addSubview:form];
-    }*/
+    [super viewDidLoad];
+	incident = [CurrentIncident getIncident].currentIncident;
+    NSMutableArray *formQuestions = [[CurrentIncident getIncident].currentIncident formQuestions];
+    /***Tester questions***/
+    [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"textfield1" withType:@"textField"]];
+    [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"textfield2" withType:@"textField"]];
+    //[formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"textfield1" withType:@"textField"]];
+    [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"textfield3" withType:@"textField"]];
+    /**********************/
+    NSLog(@"%@",[incident title]);
+    for(int i =0; i < [formQuestions count]; i++){
+        //FormField *form = [[FormField alloc] initWithType:[(FormQuestion *)[formQuestions objectAtIndex:i] type] andLabel:[(FormQuestion *)[formQuestions objectAtIndex:i] question]];
+        NSLog(@"%@", @"in loop");
+      //  [self.view addSubview:form];
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -16,6 +16,7 @@
     if (self){
         self.title = name;
         self.gradualNotification = NO;
+        self.formQuestions = [[NSMutableArray alloc] init];
         time = date;
         NSLog(@"creating incident");
         return self;

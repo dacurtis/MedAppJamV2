@@ -17,6 +17,7 @@
 		41D361FB16544B6300DBB076 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D361FA16544B6300DBB076 /* SettingsViewController.m */; };
 		41ED4D871658B092002339E9 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED4D861658B092002339E9 /* Parser.m */; };
 		A96FE60216595D7D00026DF2 /* GlobalVars.m in Sources */ = {isa = PBXBuildFile; fileRef = A96FE60116595D7D00026DF2 /* GlobalVars.m */; };
+		A96FE6061659689600026DF2 /* FormQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = A96FE6051659689600026DF2 /* FormQuestion.m */; };
 		A97678EC1655CD5C0026E4D9 /* FormField.m in Sources */ = {isa = PBXBuildFile; fileRef = A97678EB1655CD5C0026E4D9 /* FormField.m */; };
 		A9A9D39A1651EE6200288D07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A9D3991651EE6200288D07 /* UIKit.framework */; };
 		A9A9D39C1651EE6200288D07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A9D39B1651EE6200288D07 /* Foundation.framework */; };
@@ -69,10 +70,10 @@
 		41ED4D861658B092002339E9 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
 		A96FE60016595D7D00026DF2 /* GlobalVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVars.h; sourceTree = "<group>"; };
 		A96FE60116595D7D00026DF2 /* GlobalVars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalVars.m; sourceTree = "<group>"; };
+		A96FE6041659689600026DF2 /* FormQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormQuestion.h; sourceTree = "<group>"; };
+		A96FE6051659689600026DF2 /* FormQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormQuestion.m; sourceTree = "<group>"; };
 		A97678EA1655CD5C0026E4D9 /* FormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormField.h; sourceTree = "<group>"; };
 		A97678EB1655CD5C0026E4D9 /* FormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormField.m; sourceTree = "<group>"; };
-		A99834481658AD2C002CE554 /* FormQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormQuestion.h; sourceTree = "<group>"; };
-		A99834491658AD2C002CE554 /* FormQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormQuestion.m; sourceTree = "<group>"; };
 		A9A9D3951651EE6200288D07 /* IncidentReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IncidentReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A9D3991651EE6200288D07 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9A9D39B1651EE6200288D07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -161,8 +162,8 @@
 			children = (
 				A97678EA1655CD5C0026E4D9 /* FormField.h */,
 				A97678EB1655CD5C0026E4D9 /* FormField.m */,
-				A99834481658AD2C002CE554 /* FormQuestion.h */,
-				A99834491658AD2C002CE554 /* FormQuestion.m */,
+				A96FE6041659689600026DF2 /* FormQuestion.h */,
+				A96FE6051659689600026DF2 /* FormQuestion.m */,
 				A96FE60016595D7D00026DF2 /* GlobalVars.h */,
 				A96FE60116595D7D00026DF2 /* GlobalVars.m */,
 				41D361E81654466200DBB076 /* ViewController.h */,
@@ -357,6 +358,7 @@
 				419556A3165712E3008A5003 /* CurrentIncident.m in Sources */,
 				41ED4D871658B092002339E9 /* Parser.m in Sources */,
 				A96FE60216595D7D00026DF2 /* GlobalVars.m in Sources */,
+				A96FE6061659689600026DF2 /* FormQuestion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
