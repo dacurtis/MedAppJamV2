@@ -28,9 +28,14 @@
     incidentTitles = [[NSMutableArray alloc] initWithObjects:@"Description of Unreported Incident", nil];
     incidentDates = [[NSMutableArray alloc] initWithObjects:@"Date Reported", nil];
     IncidentQueueController *incidentQueue = [DocPath getPath].incidentQueue;
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"EEE, MMM d 'at' HH:mm"];
     for(int i = 0; i < [incidentQueue size]; i++) {
         [self.incidentTitles addObject:[[incidentQueue getIndex:i] title] ];
-        [self.incidentDates addObject:[[incidentQueue getIndex:i].time descriptionWithLocale:[NSLocale currentLocale]]];
+        NSDate *date = [incidentQueue getIndex:i].time;
+        NSString *theDate = [dateFormat stringFromDate:date];
+        [self.incidentDates addObject:theDate];
+        //[[incidentQueue getIndex:i].time descriptionWithLocale:[NSLocale currentLocale]]
     }
 [self.incidentTable reloadData];
 }
@@ -40,7 +45,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+	
 #pragma mark -
 #pragma mark IncidentTable DateSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -84,6 +89,22 @@
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    if ([indexPath row] != 0)
+        return YES;
+    else
+        return NO;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog([[NSString alloc] initWithFormat:@"%@", [[[DocPath getPath].incidentQueue getIndex:([indexPath row] - 1)] title]]);
+        [[DocPath getPath].incidentQueue removeIncident:([indexPath row] - 1)];
+        [self viewWillAppear:YES];
+    }
+}
+
 #pragma mark -
 #pragma mark IncidentTable Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -93,9 +114,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(Incident *)sender {
-    if ([[segue identifier] isEqualToString:@"reportNow"]) {
+    if ([[segue identifier] isEqualToString:@"reportNow"])
         [CurrentIncident getIncident].currentIncident = sender;
-        NSLog([[CurrentIncident getIncident].currentIncident title]);
-    }
 }
 @end

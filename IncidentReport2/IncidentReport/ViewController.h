@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 @property (strong, nonatomic) NSMutableArray *incidentTitles;
 @property (strong, nonatomic) NSMutableArray *incidentDates;
-
+- (NSString *) parseDateString:(NSString *)dateString;
 
 @end
