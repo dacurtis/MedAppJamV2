@@ -124,54 +124,7 @@ numberOfRowsInComponent:(NSInteger)component
         [[UIApplication sharedApplication] scheduleLocalNotification:notification];
         
         [self.navigationController popToRootViewControllerAnimated:YES];
-        [self email];
     }
     else if (false); //for other buttons
-}
-//Following code derived from mailing tutorial at www.geekylemon.com
--(void)email {
-    
-    MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
-    
-    [composer setMailComposeDelegate:self];
-    NSLog(@"%@",@"EMAIL");
-    if ([MFMailComposeViewController canSendMail]) {
-        NSString * emailAddress = [[[NSDictionary alloc] initWithContentsOfFile:[GlobalVars getVar].path] objectForKey:@"Email"];
-        NSLog(@"%@",@"Can send mail");
-        [composer setToRecipients:[NSArray arrayWithObjects:emailAddress, nil]];
-        NSLog(@"%@",emailAddress);
-        Incident * curInc = [CurrentIncident getIncident].currentIncident;
-        [composer setSubject:@"Reminder to fill out Near Miss Form"];
-        NSString * messageBody = [NSString stringWithFormat:@"This is a reminder for you to fill out a near miss form for the incident: %@ that happened at %@", [curInc description],[curInc time]];
-        
-        [composer setMessageBody:messageBody isHTML:NO];
-        
-        [composer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-        
-        [self presentModalViewController:composer animated:YES];
-    }
-    
-}
-
--(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
-    
-    if (error) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error" message:[NSString stringWithFormat:@"Unable to send message %@", [error description]]
-                              
-                                                       delegate:nil cancelButtonTitle:@"dismiss" otherButtonTitles:nil, nil];
-        
-        [alert show];
-        
-        [self dismissModalViewControllerAnimated:YES];
-        
-    }
-    
-    else {
-        
-        [self dismissModalViewControllerAnimated:YES];
-        
-    }
-    
 }
 @end

@@ -2,19 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>push notify</key>
-	<string>NO</string>
-	<key>emailNotify</key>
-	<false/>
 	<key>Hospital</key>
-	<string>UCI</string>
+	<string>0</string>
 	<key>Phone #</key>
 	<string></string>
 	<key>Email</key>
 	<string></string>
 	<key>Name</key>
-	<string>&quot;&quot;</string>
+	<string>&quot;Hi&quot;</string>
 	<key>Role</key>
-	<string>&quot;&quot;</string>
+	<string>&quot;Nurse&quot;</string>
 </dict>
 </plist>
