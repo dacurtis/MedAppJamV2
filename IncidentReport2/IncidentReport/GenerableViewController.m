@@ -32,7 +32,7 @@
 	incident = [CurrentIncident getIncident].currentIncident;
     formFields = [[NSMutableArray alloc] init];
     NSMutableArray *formQuestions = [[NSMutableArray alloc] initWithArray:[[CurrentIncident getIncident].currentIncident formQuestions]];
-    /***Tester questions***/
+    /***Tester questions***
     [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"12345678901234567890 1234567890" withType:@"textfield"]];
     [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"textfield2 123213 123123 12312 3123 123 12312 3123 123123 123 123 123 12 3 123 123 12 3 123 12 3 123 12 3 123 " withType:@"textfield"]];
     [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"textfield3 123 12 3 12 3 12 3 123 1 23123 123 1 23 12 3 123 1 31 23 12  12312 " withType:@"textfield"]];
