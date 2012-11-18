@@ -112,6 +112,16 @@ numberOfRowsInComponent:(NSInteger)component
         Incident *incident = [[Incident alloc] initWithName:desc atTime:[NSDate date]];
         [[DocPath getPath].incidentQueue addIncident:incident];
         NSLog(@"%d", [[DocPath getPath].incidentQueue size]);
+        
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        [notification setFireDate: [NSDate dateWithTimeIntervalSinceNow: 5]];
+        [notification setAlertAction:@"Launch"];
+        
+        [notification setAlertBody: desc];
+        [notification setHasAction: YES];
+        [notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1];
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+        
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
     else if (false); //for other buttons
