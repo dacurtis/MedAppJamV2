@@ -9,6 +9,7 @@
 #import "ReportNowController.h"
 #import "DocPath.h"
 #import "FormField.h"
+#import "Parser.h"
 
 @interface ReportNowController ()
 
@@ -47,9 +48,7 @@
 }
 
 - (IBAction)searchForForm:(id)sender {
-    /**
-     CALL SOMETHING THAT SENDS THE HTTPREQUEST
-     
-     */
+    Parser * parser = [[Parser alloc] initWithHospital:self.hospitalField.text];
+    [parser initializeFormQuestionArray];
 }
 @end

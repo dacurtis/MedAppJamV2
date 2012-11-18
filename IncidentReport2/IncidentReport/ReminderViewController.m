@@ -113,26 +113,14 @@ numberOfRowsInComponent:(NSInteger)component
         [[DocPath getPath].incidentQueue addIncident:incident];
         NSLog(@"%d", [[DocPath getPath].incidentQueue size]);
         
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        [notification setFireDate: [NSDate dateWithTimeIntervalSinceNow: 5]];
+        [notification setAlertAction:@"Launch"];
         
-        
-       /* NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSString *dest = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSLog(dest);
-        
-        NSMutableData *tempData = [NSMutableData data];
-        NSKeyedArchiver *coder = [[NSKeyedArchiver alloc] initForWritingWithMutableData:tempData];
-        IncidentQueueController *incidentQueue = [DocPath getPath].incidentQueue;
-        for (int i = 0; i < [incidentQueue size]; i++)
-            [coder encodeObject:[incidentQueue getIndex:i] forKey:@"incidentData"];
-        NSLog(@"%d", [tempData length]);
-        if([fileManager fileExistsAtPath:dest]) {
-            NSLog(@"path exists");
-            [tempData writeToFile:dest atomically:YES];
-        }
-        NSLog(@"%d", [tempData length]);
-        [coder finishEncoding];*/
-        
-        
+        [notification setAlertBody: desc];
+        [notification setHasAction: YES];
+        [notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1];
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
         
         [self.navigationController popToRootViewControllerAnimated:YES];
     }

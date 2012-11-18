@@ -31,10 +31,13 @@
     path.incidentQueue = [[IncidentQueueController alloc] init];
     
     NSString *arrayPath = [dest stringByAppendingPathComponent:@"incidentArray.plist"];
-    NSData *data = [[NSData alloc] initWithContentsOfFile:arrayPath];
-    NSKeyedUnarchiver *decode = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-    NSMutableArray *array = [decode decodeObjectForKey:@"incidentArray"];
-    [[DocPath getPath].incidentQueue setIncidentList:array];
+    if ([fileManager fileExistsAtPath:arrayPath]) {
+    
+        NSData *data = [[NSData alloc] initWithContentsOfFile:arrayPath];
+        NSKeyedUnarchiver *decode = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        NSMutableArray *array = [decode decodeObjectForKey:@"incidentArray"];
+        [[DocPath getPath].incidentQueue setIncidentList:array];
+    }
     
     return YES;
 }
