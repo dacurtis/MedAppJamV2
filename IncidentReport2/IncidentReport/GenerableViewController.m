@@ -26,18 +26,16 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	//incident = [CurrentIncident getIncident].currentIncident;
-    incident = [[Incident alloc] initWithName:@"test" atTime:[NSDate date]];
-    [incident addField:@"Test" ofType:@"textfield"];
-    NSLog(@"%d",[incident form].count);
+    [super viewDidLoad]; //work on this
+	/*incident = [CurrentIncident getIncident].currentIncident;
+    NSLog(@"%d",[incident]);
     FormField *form = [[FormField alloc] initWithType:@"textfield" andLabel:@"Test"];
     [self.view addSubview:form];
-    for(NSString * entry in [incident form]){
+    for(int i =0; i < [[incident form] count]; i++){
         NSLog(@"%@",@"in loop");
         FormField *form = [[FormField alloc] initWithType:@"textfield" andLabel:@"Tester"];
         [self.view addSubview:form];
-    }
+    }*/
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "IncidentQueueController.h"
+#import "CurrentIncident.h"
 
 @interface DocPath : NSObject{
     NSString *path;
@@ -15,5 +16,6 @@
 }
 @property(nonatomic,retain)NSString *path;
 @property(nonatomic,retain)IncidentQueueController *incidentQueue;
+@property(nonatomic,retain)CurrentIncident *currentIncident;
 +(DocPath*) getPath;
 @end

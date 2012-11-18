@@ -9,7 +9,7 @@
 #import "Incident.h"
 
 @implementation Incident
-@synthesize time,title, gradualNotification,form;
+@synthesize time, title, gradualNotification, formQuestions;
 
 - (id) initWithName:(NSString *)name atTime:(NSDate *) date{
     self = [super init];
@@ -37,13 +37,6 @@
             ;//self.reminderPeriod = reminderPeriod;
     }
     return nil;
-}
-
-- (void) addField:(NSString *)description ofType:(NSString *)type{
-    [self.form addObject:description];
-    [self.form setValue:nil forKey:description];
-    [self.map addObject:description];
-    [self.map setValue:type forKey:description];
 }
 
 #pragma IncidentQueueController NSCoding

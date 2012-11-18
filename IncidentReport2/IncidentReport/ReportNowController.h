@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FormField.h"
+#import "CurrentIncident.h"
 //#import "FormView.xib"
 
 @interface ReportNowController : UIViewController
@@ -16,4 +17,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *goButton;
 - (IBAction)searchForForm:(id)sender;
 @property (nonatomic, retain) UITextField *tv;
+@property (nonatomic, weak) CurrentIncident *currentIncident;
 @end

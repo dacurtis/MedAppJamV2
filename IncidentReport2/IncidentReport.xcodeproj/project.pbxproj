@@ -17,6 +17,7 @@
 		41D361FB16544B6300DBB076 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D361FA16544B6300DBB076 /* SettingsViewController.m */; };
 		A97678EC1655CD5C0026E4D9 /* FormField.m in Sources */ = {isa = PBXBuildFile; fileRef = A97678EB1655CD5C0026E4D9 /* FormField.m */; };
 		A98CE6D01654B0DF0099741E /* DocPath.m in Sources */ = {isa = PBXBuildFile; fileRef = A98CE6CF1654B0DF0099741E /* DocPath.m */; };
+		A998344A1658AD2C002CE554 /* FormQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = A99834491658AD2C002CE554 /* FormQuestion.m */; };
 		A9A9D39A1651EE6200288D07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A9D3991651EE6200288D07 /* UIKit.framework */; };
 		A9A9D39C1651EE6200288D07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A9D39B1651EE6200288D07 /* Foundation.framework */; };
 		A9A9D39E1651EE6200288D07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A9D39D1651EE6200288D07 /* CoreGraphics.framework */; };
@@ -68,6 +69,8 @@
 		A97678EB1655CD5C0026E4D9 /* FormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormField.m; sourceTree = "<group>"; };
 		A98CE6CE1654B0DE0099741E /* DocPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocPath.h; sourceTree = "<group>"; };
 		A98CE6CF1654B0DF0099741E /* DocPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocPath.m; sourceTree = "<group>"; };
+		A99834481658AD2C002CE554 /* FormQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormQuestion.h; sourceTree = "<group>"; };
+		A99834491658AD2C002CE554 /* FormQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormQuestion.m; sourceTree = "<group>"; };
 		A9A9D3951651EE6200288D07 /* IncidentReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IncidentReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A9D3991651EE6200288D07 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9A9D39B1651EE6200288D07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -156,6 +159,8 @@
 			children = (
 				A97678EA1655CD5C0026E4D9 /* FormField.h */,
 				A97678EB1655CD5C0026E4D9 /* FormField.m */,
+				A99834481658AD2C002CE554 /* FormQuestion.h */,
+				A99834491658AD2C002CE554 /* FormQuestion.m */,
 				A98CE6CE1654B0DE0099741E /* DocPath.h */,
 				A98CE6CF1654B0DF0099741E /* DocPath.m */,
 				41D361E81654466200DBB076 /* ViewController.h */,
@@ -347,6 +352,7 @@
 				4195569C1656F9F2008A5003 /* FormViewController.m in Sources */,
 				419556A016570B57008A5003 /* GenerableViewController.m in Sources */,
 				419556A3165712E3008A5003 /* CurrentIncident.m in Sources */,
+				A998344A1658AD2C002CE554 /* FormQuestion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

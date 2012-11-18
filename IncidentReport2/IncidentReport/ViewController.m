@@ -88,8 +88,14 @@
 #pragma mark IncidentTable Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if([indexPath item] != 0) {
-        NSLog(@"row selected");
-        [self performSegueWithIdentifier:@"reportNow" sender:[tableView cellForRowAtIndexPath:indexPath]];
+        [self performSegueWithIdentifier:@"reportNow" sender:[[DocPath getPath].incidentQueue getIndex:([indexPath row] - 1)]];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(Incident *)sender {
+    if ([[segue identifier] isEqualToString:@"reportNow"]) {
+        [CurrentIncident getIncident].currentIncident = sender;
+        NSLog([[CurrentIncident getIncident].currentIncident title]);
     }
 }
 @end

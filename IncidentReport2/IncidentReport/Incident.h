@@ -15,7 +15,5 @@
 @property (nonatomic) BOOL gradualNotification;
 - (id)initWithName:(NSString *)title atTime:(NSDate *) date;
 - (id)initWithReportLater:(NSString *)title atTime:(NSDate *)date withReminderPeriod:(NSUInteger)reminderPeriod;
-- (void)addField:(NSString *)description ofType:(NSString *)type;
-@property (nonatomic, retain) NSMutableArray *form;
-@property (nonatomic, retain) NSMutableArray *map;
+@property (nonatomic, retain) NSMutableArray *formQuestions;
 @end

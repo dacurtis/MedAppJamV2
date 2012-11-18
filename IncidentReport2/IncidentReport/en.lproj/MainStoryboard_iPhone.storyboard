@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="height" constant="252" id="FCX-yB-awE"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="tnB-Vb-4xr" detailTextLabel="617-Bj-iVf" style="IBUITableViewCellStyleSubtitle" id="0jh-RN-WuF">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="incidentCell" textLabel="tnB-Vb-4xr" detailTextLabel="617-Bj-iVf" style="IBUITableViewCellStyleSubtitle" id="0jh-RN-WuF">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
