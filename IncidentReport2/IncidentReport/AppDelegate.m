@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DocPath.h"
+#import "GlobalVars.h"
 #import "IncidentQueueController.h"
 #import "Incident.h"
 @implementation AppDelegate
@@ -24,11 +24,11 @@
     [fileManager copyItemAtPath:bundlePath toPath:docPath error:nil];
     //NSLog(@"File copied!");
     
-    DocPath *path = [DocPath getPath];
-    path.path = docPath;
+    GlobalVars *vars = [GlobalVars getVar];
+    vars.path = docPath;
     //NSLog(@"%@",path);
     
-    path.incidentQueue = [[IncidentQueueController alloc] init];
+    vars.incidentQueue = [[IncidentQueueController alloc] init];
     
     NSString *arrayPath = [dest stringByAppendingPathComponent:@"incidentArray.plist"];
     if ([fileManager fileExistsAtPath:arrayPath]) {
@@ -36,7 +36,7 @@
         NSData *data = [[NSData alloc] initWithContentsOfFile:arrayPath];
         NSKeyedUnarchiver *decode = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
         NSMutableArray *array = [decode decodeObjectForKey:@"incidentArray"];
-        [[DocPath getPath].incidentQueue setIncidentList:array];
+        [[GlobalVars getVar].incidentQueue setIncidentList:array];
     }
     
     return YES;
@@ -55,7 +55,7 @@
     NSString *docsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) objectAtIndex:0];
     NSString *appDir = [[NSBundle mainBundle] resourcePath];
     NSString *src = [appDir stringByAppendingPathComponent: @"new.plist"];
-    IncidentQueueController *incidentQueue = [DocPath getPath].incidentQueue;
+    IncidentQueueController *incidentQueue = [GlobalVars getVar].incidentQueue;
     NSMutableArray *incidentArray = [incidentQueue incidentList];
     NSString *dest = [docsDir stringByAppendingPathComponent: (@"incidentArray.plist")];
     

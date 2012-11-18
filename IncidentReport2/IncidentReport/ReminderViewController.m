@@ -7,7 +7,7 @@
 //
 
 #import "ReminderViewController.h"
-#import "DocPath.h"
+#import "GlobalVars.h"
 #import "IncidentQueueController.h"
 #import "Incident.h"
 
@@ -110,8 +110,8 @@ numberOfRowsInComponent:(NSInteger)component
         }
         NSString *desc = [descriptionField text];
         Incident *incident = [[Incident alloc] initWithName:desc atTime:[NSDate date]];
-        [[DocPath getPath].incidentQueue addIncident:incident];
-        NSLog(@"%d", [[DocPath getPath].incidentQueue size]);
+        [[GlobalVars getVar].incidentQueue addIncident:incident];
+        NSLog(@"%d", [[GlobalVars getVar].incidentQueue size]);
         
         UILocalNotification *notification = [[UILocalNotification alloc] init];
         [notification setFireDate: [NSDate dateWithTimeIntervalSinceNow: 5]];
@@ -119,7 +119,8 @@ numberOfRowsInComponent:(NSInteger)component
         
         [notification setAlertBody: desc];
         [notification setHasAction: YES];
-        [notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1];
+        //[notification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber]+1];
+        [notification setApplicationIconBadgeNumber:[[GlobalVars getVar].incidentQueue size]];
         [[UIApplication sharedApplication] scheduleLocalNotification:notification];
         
         [self.navigationController popToRootViewControllerAnimated:YES];

@@ -7,7 +7,7 @@
 //
 
 #import "ReportNowController.h"
-#import "DocPath.h"
+#import "GlobalVars.h"
 #import "FormField.h"
 #import "Parser.h"
 
@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString * path = [DocPath getPath].path;
+    NSString * path = [GlobalVars getVar].path;
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     self.hospitalField.text = [dict objectForKey:@"Hospital"];
 }

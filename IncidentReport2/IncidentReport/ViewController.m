@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "IncidentQueueController.h"
 #import "Incident.h"
-#import "DocPath.h"
+#import "GlobalVars.h"
 
 @interface ViewController ()
 
@@ -27,7 +27,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     incidentTitles = [[NSMutableArray alloc] initWithObjects:@"Description of Unreported Incident", nil];
     incidentDates = [[NSMutableArray alloc] initWithObjects:@"Date Reported", nil];
-    IncidentQueueController *incidentQueue = [DocPath getPath].incidentQueue;
+    IncidentQueueController *incidentQueue = [GlobalVars getVar].incidentQueue;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"EEE, MMM d 'at' HH:mm"];
     for(int i = 0; i < [incidentQueue size]; i++) {
@@ -99,8 +99,8 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSLog([[NSString alloc] initWithFormat:@"%@", [[[DocPath getPath].incidentQueue getIndex:([indexPath row] - 1)] title]]);
-        [[DocPath getPath].incidentQueue removeIncident:([indexPath row] - 1)];
+        NSLog([[NSString alloc] initWithFormat:@"%@", [[[GlobalVars getVar].incidentQueue getIndex:([indexPath row] - 1)] title]]);
+        [[GlobalVars getVar].incidentQueue removeIncident:([indexPath row] - 1)];
         [self viewWillAppear:YES];
     }
 }
@@ -109,7 +109,7 @@
 #pragma mark IncidentTable Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if([indexPath item] != 0) {
-        [self performSegueWithIdentifier:@"reportNow" sender:[[DocPath getPath].incidentQueue getIndex:([indexPath row] - 1)]];
+        [self performSegueWithIdentifier:@"reportNow" sender:[[GlobalVars getVar].incidentQueue getIndex:([indexPath row] - 1)]];
     }
 }
 

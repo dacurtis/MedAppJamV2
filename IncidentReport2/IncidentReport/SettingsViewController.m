@@ -7,7 +7,7 @@
 //
 
 #import "SettingsViewController.h"
-#import "DocPath.h"
+#import "GlobalVars.h"
 
 @interface SettingsViewController ()
 
@@ -31,7 +31,7 @@
 
 - (void)loadView {
     [super loadView];
-    NSString *path = [DocPath getPath].path;
+    NSString *path = [GlobalVars getVar].path;
     NSLog(@"%@",path);
     dict = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
     [nameField setText:[dict valueForKey:@"Name"]];
@@ -67,7 +67,7 @@
     if([sender tag] == 5)
         [dict setValue:roleField.text forKey:@"Role"];
     
-    NSString *docPath = [DocPath getPath].path;
+    NSString *docPath = [GlobalVars getVar].path;
     
     [dict writeToFile:docPath atomically:YES];
 }
