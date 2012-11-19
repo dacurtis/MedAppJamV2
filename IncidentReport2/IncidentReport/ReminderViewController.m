@@ -10,6 +10,7 @@
 #import "GlobalVars.h"
 #import "IncidentQueueController.h"
 #import "Incident.h"
+#import "NSBoolean.h"
 
 @interface ReminderViewController ()
 
@@ -125,12 +126,22 @@ numberOfRowsInComponent:(NSInteger)component
         
         [self.navigationController popToRootViewControllerAnimated:YES];
         
-        NSString *em = [[[NSDictionary alloc] initWithContentsOfFile:[GlobalVars getVar].path] objectForKey:@"Email"];
         
+        
+        
+        NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:[GlobalVars getVar].path];
+        NSBoolean * bo = [dic objectForKey:@"EmailNotifications"];
+        if([bo isTrue])
+        {
+            NSLog(@"sending email");
+        NSString *em = [dic objectForKey:@"Email"];
         NSString *url = [@"http://108.66.96.158/email.php?t=" stringByAppendingString: em];
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15];
         [[NSURLConnection alloc] initWithRequest:request delegate:self];
-
+        }
+        else{
+            
+        }
         
     }
     else if (false); //for other buttons

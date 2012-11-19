@@ -10,6 +10,8 @@
 	<string></string>
 	<key>Name</key>
 	<string>&quot;Hi&quot;</string>
+	<key>EmailNotifications</key>
+	<true/>
 	<key>Role</key>
 	<string>&quot;Nurse&quot;</string>
 </dict>
