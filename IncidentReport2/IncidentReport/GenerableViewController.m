@@ -29,24 +29,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"generable loaded");
+    
 	incident = [CurrentIncident getIncident].currentIncident;
     formFields = [[NSMutableArray alloc] init];
-    NSMutableArray *formQuestions = [[NSMutableArray alloc] initWithArray:[[CurrentIncident getIncident].currentIncident formQuestions]];
-    /***Tester questions***
-    [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"12345678901234567890 1234567890" withType:@"textfield"]];
-    [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"textfield2 123213 123123 12312 3123 123 12312 3123 123123 123 123 123 12 3 123 123 12 3 123 12 3 123 12 3 123 " withType:@"textfield"]];
-    [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"textfield3 123 12 3 12 3 12 3 123 1 23123 123 1 23 12 3 123 1 31 23 12  12312 " withType:@"textfield"]];
-    [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"textfield3 123 12 3 12 3 12 3 123 1 23123 123 1 23 12 3 123 1 31 23 12  12312 " withType:@"textfield"]];
-    [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"textfield3 123 12 3 12 3 12 3 123 1 23123 123 1 23 12 3 123 1 31 23 12  12312 " withType:@"textfield"]];
-    [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"textfield3 123 12 3 12 3 12 3 123 1 23123 123 1 23 12 3 123 1 31 23 12  12312 " withType:@"textfield"]];
-    [formQuestions addObject:[[FormQuestion alloc] initWithQuestion:@"textfield3 123 12 3 12 3 12 3 123 1 23123 123 1 23 12 3 123 1 31 23 12  12312 " withType:@"textfield"]];
-    /**********************/
-    NSLog(@"%@",[incident title]);
+    NSMutableArray *formQuestions = [incident formQuestions];
+    NSLog(@"size of form questions: %d", [[incident formQuestions] count]);
+    for (int i = 0; i < [[[CurrentIncident getIncident].currentIncident formQuestions] count]; i++) {
+        NSLog(@"array in generable has %@", [[[[CurrentIncident getIncident].currentIncident formQuestions] objectAtIndex:i] question]);
+    }
+
     float height = 0;
     for(int i = 0; i < [formQuestions count]; i++){
         NSString * text = [[formQuestions objectAtIndex:i] question];
         FormField *form = nil;
-        NSLog([[formQuestions objectAtIndex:i] question]);
         int numLines = 0;
         if((text.length % 20) > 0){
             numLines = text.length/20 +1;
@@ -56,7 +52,7 @@
             numLines = text.length/20;
             
         }
-        NSLog(@"%d", numLines);
+        //NSLog(@"%d", numLines);
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20 + (height), 250, 20*numLines)];
         [label setNumberOfLines:numLines];
         [label setLineBreakMode:NSLineBreakByWordWrapping];
@@ -72,7 +68,6 @@
         [self.view addSubview:field];
         [formFields addObject:field];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,5 +88,7 @@
     NSString *answer = ([[formFields objectAtIndex:[textField tag]] text]);
     [[[incident formQuestions] objectAtIndex:[textField tag]] setAnswer:answer];
     NSLog(answer);
+}
+- (IBAction)submitPressed:(id)sender {
 }
 @end

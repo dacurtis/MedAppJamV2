@@ -14,5 +14,6 @@
 @property (nonatomic, retain) FormField *field;
 @property (nonatomic, retain) Incident *incident;
 @property (nonatomic, retain) NSMutableArray *formFields;
+- (IBAction)submitPressed:(id)sender;
 @property (nonatomic, retain) UIView *view;
 @end

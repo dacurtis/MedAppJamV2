@@ -16,6 +16,7 @@
     if (self != nil) {
         self.type = type;
         self.question = question;
+        self.answer = [[NSString alloc] init];
         return self;
     }
     return nil;
