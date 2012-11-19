@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		412966181659BC6C00F315AB /* NSBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = 412966171659BC6C00F315AB /* NSBoolean.m */; };
 		4195569C1656F9F2008A5003 /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195569B1656F9F2008A5003 /* FormViewController.m */; };
 		419556A016570B57008A5003 /* GenerableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195569F16570B57008A5003 /* GenerableViewController.m */; };
 		419556A3165712E3008A5003 /* CurrentIncident.m in Sources */ = {isa = PBXBuildFile; fileRef = 419556A2165712E3008A5003 /* CurrentIncident.m */; };
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		412966161659BC6C00F315AB /* NSBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBoolean.h; sourceTree = "<group>"; };
+		412966171659BC6C00F315AB /* NSBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBoolean.m; sourceTree = "<group>"; };
 		4195569A1656F9F2008A5003 /* FormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewController.h; sourceTree = "<group>"; };
 		4195569B1656F9F2008A5003 /* FormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewController.m; sourceTree = "<group>"; };
 		4195569E16570B57008A5003 /* GenerableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerableViewController.h; sourceTree = "<group>"; };
@@ -170,8 +173,8 @@
 				A96FE6051659689600026DF2 /* FormQuestion.m */,
 				A96FE60016595D7D00026DF2 /* GlobalVars.h */,
 				A96FE60116595D7D00026DF2 /* GlobalVars.m */,
-				41D361E81654466200DBB076 /* ViewController.h */,
 				41D361E91654466200DBB076 /* ViewController.m */,
+				41D361E81654466200DBB076 /* ViewController.h */,
 				41D361E21654457600DBB076 /* ReminderViewController.h */,
 				41D361E31654457600DBB076 /* ReminderViewController.m */,
 				41ED4D851658B092002339E9 /* Parser.h */,
@@ -179,11 +182,11 @@
 				A9A9D3A81651EE6200288D07 /* AppDelegate.h */,
 				A9A9D3A91651EE6200288D07 /* AppDelegate.m */,
 				A9A9D3B11651EE6300288D07 /* MainStoryboard_iPhone.storyboard */,
+				41970B211656E9EF007C01DF /* ReportNowController.h */,
 				4195569E16570B57008A5003 /* GenerableViewController.h */,
 				4195569F16570B57008A5003 /* GenerableViewController.m */,
 				4195569A1656F9F2008A5003 /* FormViewController.h */,
 				4195569B1656F9F2008A5003 /* FormViewController.m */,
-				41970B211656E9EF007C01DF /* ReportNowController.h */,
 				41970B221656E9EF007C01DF /* ReportNowController.m */,
 				419556A1165712E3008A5003 /* CurrentIncident.h */,
 				419556A2165712E3008A5003 /* CurrentIncident.m */,
@@ -195,6 +198,8 @@
 				A9A9D3E01651FFA300288D07 /* IncidentQueueController.m */,
 				41D361F916544B6300DBB076 /* SettingsViewController.h */,
 				41D361FA16544B6300DBB076 /* SettingsViewController.m */,
+				412966161659BC6C00F315AB /* NSBoolean.h */,
+				412966171659BC6C00F315AB /* NSBoolean.m */,
 				A9A9D3B41651EE6300288D07 /* MainStoryboard_iPad.storyboard */,
 				A9A9D3A01651EE6200288D07 /* Supporting Files */,
 			);
@@ -363,6 +368,7 @@
 				41ED4D871658B092002339E9 /* Parser.m in Sources */,
 				A96FE60216595D7D00026DF2 /* GlobalVars.m in Sources */,
 				A96FE6061659689600026DF2 /* FormQuestion.m in Sources */,
+				412966181659BC6C00F315AB /* NSBoolean.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
