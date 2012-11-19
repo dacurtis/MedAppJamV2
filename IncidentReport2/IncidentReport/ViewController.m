@@ -10,6 +10,7 @@
 #import "IncidentQueueController.h"
 #import "Incident.h"
 #import "GlobalVars.h"
+#import "CurrentIncident.h"
 
 @interface ViewController ()
 
@@ -21,11 +22,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:[[GlobalVars getVar].incidentQueue size]];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    incidentTitles = [[NSMutableArray alloc] initWithObjects:@"Description of Unreported Incident", nil];
+    incidentTitles = [[NSMutableArray alloc] initWithObjects:@"Description", nil];
     incidentDates = [[NSMutableArray alloc] initWithObjects:@"Date Reported", nil];
     IncidentQueueController *incidentQueue = [GlobalVars getVar].incidentQueue;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -38,6 +40,7 @@
         //[[incidentQueue getIndex:i].time descriptionWithLocale:[NSLocale currentLocale]]
     }
 [self.incidentTable reloadData];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:[[GlobalVars getVar].incidentQueue size]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,10 +84,12 @@
     cell.textLabel.text = title;
     cell.detailTextLabel.text = date;
     
-    if([indexPath item] != 0)
+    if([indexPath item] != 0) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    else
+    }
+    else {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
     
     return cell;
 }
@@ -109,11 +114,25 @@
 #pragma mark IncidentTable Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if([indexPath item] != 0) {
-        [self performSegueWithIdentifier:@"reportNow" sender:[[GlobalVars getVar].incidentQueue getIndex:([indexPath row] - 1)]];
+        if([[[[GlobalVars getVar].incidentQueue getIndex:([indexPath row] - 1)] formQuestions] count] > 0 ){
+            [self performSegueWithIdentifier:@"reportForm" sender:[[GlobalVars getVar].incidentQueue getIndex:([indexPath row] - 1)]];
+        } else {
+            [self performSegueWithIdentifier:@"reportNow" sender:[[GlobalVars getVar].incidentQueue getIndex:([indexPath row] - 1)]];
+        }
     }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    /*if ([indexPath row] == 0)
+        cell.backgroundColor = [UIColor colorWithRed:0.72225 green:0.72225 blue:0.72225 alpha:1];*/
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(Incident *)sender {
     [CurrentIncident getIncident].currentIncident = sender;
+}
+- (IBAction)reportNow:(Incident *)sender {
+    Incident *incident = [[Incident alloc] initWithName:@"Near Miss" atTime:[NSDate date]];
+    [CurrentIncident getIncident].currentIncident = incident;
+    [self performSegueWithIdentifier:@"reportNow" sender:[CurrentIncident getIncident].currentIncident];
 }
 @end

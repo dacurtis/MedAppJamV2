@@ -9,14 +9,15 @@
 #import "Parser.h"
 #import "CurrentIncident.h"
 #import "FormQuestion.h"
+
 @implementation Parser
 @synthesize response;
-@synthesize hospital,isDone;
+@synthesize hospital,isDone,isCompleted;
 
 - (Parser*) initWithHospital:(NSString *) hospital{
     self  = [super init];
     self.hospital = hospital;
-    
+    self.isCompleted = NO;
     /*
      CODE TO ACCESS ONLINE FORM AND PARSE IT GOES HERE
      SAVE THE RESULT TO self.formString
@@ -27,6 +28,15 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 
+    if(connection) {
+        isCompleted = YES;
+    }
+    else {
+        isCompleted = NO;
+    }
+    
+    
+    
     return self;
     
     
@@ -47,7 +57,8 @@
      CODE TO TAKE THE CURRENT INCIDENT AND SET EACH VALUE IN ITS FORM QUESTION
      ARRAY TO THE VALUES FROM THE PARSE STRING GOES HERE
      */
-
+    
+    if(isCompleted) {
     NSArray * questions = [self.response componentsSeparatedByString:@"~"];
     NSMutableArray *arrayOfFormQuestions = [[NSMutableArray alloc] init];
     //NSLog(@"questions in questions array %d", [questions count]);
@@ -70,6 +81,10 @@
     }
     [[CurrentIncident getIncident].currentIncident setFormQuestions:[incident formQuestions]];
     NSLog(@"count %d", [[[CurrentIncident getIncident].currentIncident formQuestions] count]);
-    
+    }
+    else{
+        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Hospital Not Found" message:@"No forms were found for that hospital." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [error show];
+    }
 }
 @end

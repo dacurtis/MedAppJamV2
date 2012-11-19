@@ -14,5 +14,6 @@
 @property (strong, nonatomic) NSMutableArray *incidentTitles;
 @property (strong, nonatomic) NSMutableArray *incidentDates;
 - (NSString *) parseDateString:(NSString *)dateString;
+- (IBAction)reportNow:(id)sender;
 
 @end

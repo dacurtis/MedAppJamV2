@@ -16,9 +16,12 @@
 		41D361EA1654466200DBB076 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D361E91654466200DBB076 /* ViewController.m */; };
 		41D361FB16544B6300DBB076 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D361FA16544B6300DBB076 /* SettingsViewController.m */; };
 		41ED4D871658B092002339E9 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ED4D861658B092002339E9 /* Parser.m */; };
+		A9609FBC1659F20B0057D61E /* iPhoneIcon_Small-1resized.png in Resources */ = {isa = PBXBuildFile; fileRef = A9609FBB1659F20B0057D61E /* iPhoneIcon_Small-1resized.png */; };
+		A9609FBF1659F20E0057D61E /* iPhoneIcon_Big-1resized.png in Resources */ = {isa = PBXBuildFile; fileRef = A9609FBE1659F20E0057D61E /* iPhoneIcon_Big-1resized.png */; };
 		A96FE60216595D7D00026DF2 /* GlobalVars.m in Sources */ = {isa = PBXBuildFile; fileRef = A96FE60116595D7D00026DF2 /* GlobalVars.m */; };
 		A96FE6061659689600026DF2 /* FormQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = A96FE6051659689600026DF2 /* FormQuestion.m */; };
 		A97678EC1655CD5C0026E4D9 /* FormField.m in Sources */ = {isa = PBXBuildFile; fileRef = A97678EB1655CD5C0026E4D9 /* FormField.m */; };
+		A97D96441659CB0B00969265 /* NSBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = A97D96431659CB0B00969265 /* NSBoolean.m */; };
 		A9A9D39A1651EE6200288D07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A9D3991651EE6200288D07 /* UIKit.framework */; };
 		A9A9D39C1651EE6200288D07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A9D39B1651EE6200288D07 /* Foundation.framework */; };
 		A9A9D39E1651EE6200288D07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A9D39D1651EE6200288D07 /* CoreGraphics.framework */; };
@@ -69,13 +72,17 @@
 		41D361FA16544B6300DBB076 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		41ED4D851658B092002339E9 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		41ED4D861658B092002339E9 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		A9609FBB1659F20B0057D61E /* iPhoneIcon_Small-1resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhoneIcon_Small-1resized.png"; sourceTree = "<group>"; };
+		A9609FBE1659F20E0057D61E /* iPhoneIcon_Big-1resized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhoneIcon_Big-1resized.png"; sourceTree = "<group>"; };
 		A96FE60016595D7D00026DF2 /* GlobalVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVars.h; sourceTree = "<group>"; };
 		A96FE60116595D7D00026DF2 /* GlobalVars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalVars.m; sourceTree = "<group>"; };
 		A96FE6041659689600026DF2 /* FormQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormQuestion.h; sourceTree = "<group>"; };
 		A96FE6051659689600026DF2 /* FormQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormQuestion.m; sourceTree = "<group>"; };
 		A97678EA1655CD5C0026E4D9 /* FormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormField.h; sourceTree = "<group>"; };
 		A97678EB1655CD5C0026E4D9 /* FormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormField.m; sourceTree = "<group>"; };
-		A9A9D3951651EE6200288D07 /* IncidentReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IncidentReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A97D96421659CB0B00969265 /* NSBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBoolean.h; sourceTree = "<group>"; };
+		A97D96431659CB0B00969265 /* NSBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBoolean.m; sourceTree = "<group>"; };
+		A9A9D3951651EE6200288D07 /* NearMiss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMiss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A9D3991651EE6200288D07 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9A9D39B1651EE6200288D07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A9A9D39D1651EE6200288D07 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,6 +140,8 @@
 		A9A9D38A1651EE6200288D07 = {
 			isa = PBXGroup;
 			children = (
+				A9609FBE1659F20E0057D61E /* iPhoneIcon_Big-1resized.png */,
+				A9609FBB1659F20B0057D61E /* iPhoneIcon_Small-1resized.png */,
 				A9E6B65B1659A3F000444D49 /* MessageUI.framework */,
 				A9A9D39F1651EE6200288D07 /* IncidentReport */,
 				A9A9D3C61651EE6300288D07 /* IncidentReportTests */,
@@ -144,7 +153,7 @@
 		A9A9D3961651EE6200288D07 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A9A9D3951651EE6200288D07 /* IncidentReport.app */,
+				A9A9D3951651EE6200288D07 /* NearMiss.app */,
 				A9A9D3BF1651EE6300288D07 /* IncidentReportTests.octest */,
 			);
 			name = Products;
@@ -164,6 +173,8 @@
 		A9A9D39F1651EE6200288D07 /* IncidentReport */ = {
 			isa = PBXGroup;
 			children = (
+				A97D96421659CB0B00969265 /* NSBoolean.h */,
+				A97D96431659CB0B00969265 /* NSBoolean.m */,
 				A97678EA1655CD5C0026E4D9 /* FormField.h */,
 				A97678EB1655CD5C0026E4D9 /* FormField.m */,
 				A96FE6041659689600026DF2 /* FormQuestion.h */,
@@ -252,7 +263,7 @@
 			);
 			name = IncidentReport;
 			productName = IncidentReport;
-			productReference = A9A9D3951651EE6200288D07 /* IncidentReport.app */;
+			productReference = A9A9D3951651EE6200288D07 /* NearMiss.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A9A9D3BE1651EE6300288D07 /* IncidentReportTests */ = {
@@ -313,6 +324,8 @@
 				A9A9D3B31651EE6300288D07 /* MainStoryboard_iPhone.storyboard in Resources */,
 				A9A9D3B61651EE6300288D07 /* MainStoryboard_iPad.storyboard in Resources */,
 				41D361E01654456800DBB076 /* settings.plist in Resources */,
+				A9609FBC1659F20B0057D61E /* iPhoneIcon_Small-1resized.png in Resources */,
+				A9609FBF1659F20E0057D61E /* iPhoneIcon_Big-1resized.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +376,7 @@
 				41ED4D871658B092002339E9 /* Parser.m in Sources */,
 				A96FE60216595D7D00026DF2 /* GlobalVars.m in Sources */,
 				A96FE6061659689600026DF2 /* FormQuestion.m in Sources */,
+				A97D96441659CB0B00969265 /* NSBoolean.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +492,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IncidentReport/IncidentReport-Prefix.pch";
 				INFOPLIST_FILE = "IncidentReport/IncidentReport-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NearMiss;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -489,7 +503,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IncidentReport/IncidentReport-Prefix.pch";
 				INFOPLIST_FILE = "IncidentReport/IncidentReport-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NearMiss;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

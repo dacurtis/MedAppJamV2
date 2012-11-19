@@ -33,6 +33,7 @@
     NSString * path = [GlobalVars getVar].path;
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     self.hospitalField.text = [dict objectForKey:@"Hospital"];
+    Parser * parser = [[Parser alloc] initWithHospital:self.hospitalField.text];
     NSLog(@"current incident: %@", [[CurrentIncident getIncident].currentIncident title]);
 }
 
@@ -41,9 +42,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)textFieldDidEndEditing:(UITextField *)theTextField {
+    Parser * parser = [[Parser alloc] initWithHospital:self.hospitalField.text];
+    [self performSegueWithIdentifier:@"goToForm" sender:nil];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
     [theTextField resignFirstResponder];
-    Parser * parser = [[Parser alloc] initWithHospital:self.hospitalField.text];
+    //Parser * parser = [[Parser alloc] initWithHospital:self.hospitalField.text];
 
     //[self performSegueWithIdentifier:@"goToForm" sender:nil];
     return YES;

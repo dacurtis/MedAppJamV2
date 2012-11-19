@@ -12,6 +12,7 @@
 @property (weak, nonatomic)NSString *hospital;
 @property (nonatomic, retain) NSString *response;
 @property (nonatomic) BOOL isDone;
+@property (nonatomic) BOOL isCompleted;
 - (Parser*) initWithHospital:(NSString *) hospital;
 - (BOOL) initializeFormQuestionArray;
 @end

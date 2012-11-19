@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>Hospital</key>
-	<string>0</string>
+	<string></string>
 	<key>Phone #</key>
 	<string></string>
 	<key>Email</key>
 	<string></string>
 	<key>Name</key>
-	<string>&quot;Hi&quot;</string>
+	<string></string>
 	<key>Role</key>
-	<string>&quot;Nurse&quot;</string>
+	<string></string>
 </dict>
 </plist>

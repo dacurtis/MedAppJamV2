@@ -13,7 +13,9 @@
 @interface GenerableViewController : UIViewController <UITextFieldDelegate>
 @property (nonatomic, retain) FormField *field;
 @property (nonatomic, retain) Incident *incident;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *submitButton;
 @property (nonatomic, retain) NSMutableArray *formFields;
 - (IBAction)submitPressed:(id)sender;
-@property (nonatomic, retain) UIView *view;
+@property (strong, nonatomic) UIScrollView *scrollView;
+
 @end

@@ -8,6 +8,7 @@
         <scene sceneID="a7G-qN-Yxl">
             <objects>
                 <navigationController definesPresentationContext="YES" id="mhe-MH-CBx" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fQ3-FF-EFD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ETR-8R-uaW">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -70,6 +71,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="reportNow:" destination="2" eventType="touchUpInside" id="q7F-fE-xJ9"/>
                                     <segue destination="0Cm-Ld-kht" kind="push" identifier="reportNow" id="Uyg-Eu-0Vw"/>
                                 </connections>
                             </button>
@@ -87,7 +89,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="cxx-Zz-NFN" secondAttribute="bottom" constant="38" id="HY3-SO-Nl1"/>
                             <constraint firstItem="Gr7-OY-cq0" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="PRa-G8-fbu"/>
@@ -110,6 +112,7 @@
                     <connections>
                         <outlet property="incidentTable" destination="Gr7-OY-cq0" id="C3b-KF-XOo"/>
                         <outlet property="settingsButton" destination="XXH-ih-Y0k" id="KmP-Ww-jfW"/>
+                        <segue destination="vBa-pf-WZ4" kind="push" identifier="reportForm" id="UGr-Uc-jFu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -134,7 +137,7 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y5Q-Pd-K28">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="Uuc-YA-Prd" id="eJ8-gY-4vN"/>
                                 </connections>
@@ -157,16 +160,16 @@
                                 </connections>
                             </pickerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.91372555489999996" green="0.91372555489999996" blue="0.91372555489999996" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="2co-X7-Xmo" firstAttribute="trailing" secondItem="i0F-IV-czJ" secondAttribute="trailing" type="default" id="0Tu-Ul-YF5"/>
                             <constraint firstItem="2co-X7-Xmo" firstAttribute="leading" secondItem="i0F-IV-czJ" secondAttribute="leading" type="default" id="2VA-vQ-TYO"/>
                             <constraint firstItem="Y5Q-Pd-K28" firstAttribute="leading" secondItem="i0F-IV-czJ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="5fv-9D-J5A"/>
                             <constraint firstAttribute="trailing" secondItem="Y5Q-Pd-K28" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7JR-L8-JgH"/>
                             <constraint firstItem="2co-X7-Xmo" firstAttribute="top" secondItem="sXI-UK-IMu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7va-ms-85r"/>
-                            <constraint firstItem="HWg-QK-u3U" firstAttribute="top" secondItem="i0F-IV-czJ" secondAttribute="top" constant="20" symbolic="YES" type="default" id="8k5-53-ij0"/>
-                            <constraint firstItem="Y5Q-Pd-K28" firstAttribute="top" secondItem="HWg-QK-u3U" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9eP-wL-bYm"/>
-                            <constraint firstItem="sXI-UK-IMu" firstAttribute="top" secondItem="i0F-IV-czJ" secondAttribute="top" constant="98" id="X4v-Jd-3nY"/>
+                            <constraint firstItem="sXI-UK-IMu" firstAttribute="top" secondItem="i0F-IV-czJ" secondAttribute="top" constant="97" id="OPG-Hw-98g"/>
+                            <constraint firstItem="HWg-QK-u3U" firstAttribute="top" secondItem="i0F-IV-czJ" secondAttribute="top" constant="19" id="U9Z-VP-52X"/>
+                            <constraint firstItem="Y5Q-Pd-K28" firstAttribute="top" secondItem="i0F-IV-czJ" secondAttribute="top" constant="49" id="f22-kV-Ju8"/>
                             <constraint firstItem="HWg-QK-u3U" firstAttribute="leading" secondItem="sXI-UK-IMu" secondAttribute="leading" type="default" id="qMO-HC-or3"/>
                             <constraint firstItem="HWg-QK-u3U" firstAttribute="leading" secondItem="i0F-IV-czJ" secondAttribute="leading" constant="14" id="s16-nv-orM"/>
                         </constraints>
@@ -230,6 +233,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="0.91372555494308472" green="0.91372555494308472" blue="0.91372555494308472" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstItem="4QM-Ph-iAj" firstAttribute="top" secondItem="VDj-72-YIa" secondAttribute="top" constant="247" id="0Zz-bd-D7M"/>
                                     <constraint firstItem="wzH-VH-gbk" firstAttribute="leading" secondItem="VDj-72-YIa" secondAttribute="leading" constant="54" id="9TM-ZD-TjW"/>
@@ -268,19 +272,22 @@
                     <view key="view" contentMode="scaleToFill" id="bN3-mM-tIF">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Report Form" id="hAd-Pt-aQh">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" style="done" id="d4y-Z5-kuI">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" style="done" id="X3g-KC-Kno">
                             <connections>
-                                <action selector="submitPressed:" destination="vBa-pf-WZ4" id="G7u-ZM-dLA"/>
+                                <action selector="submitPressed:" destination="vBa-pf-WZ4" id="v1E-YI-cN5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="submitButton" destination="X3g-KC-Kno" id="n0J-qD-TIQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISr-kH-19k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="587" y="-533"/>
+            <point key="canvasLocation" x="594" y="-530"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="kNn-Rs-kAi">
@@ -403,29 +410,42 @@
                                             <outlet property="delegate" destination="buw-rG-MbS" id="f6O-1W-w5d"/>
                                         </connections>
                                     </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email Notifications:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syR-mk-m1O">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="157" id="MVW-aO-yUk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w0P-9J-kpO"/>
                                 </subviews>
+                                <color key="backgroundColor" red="0.91372555489999996" green="0.91372555489999996" blue="0.91372555489999996" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstItem="f3Y-Vc-05p" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="161" id="0nQ-9F-9UV"/>
                                     <constraint firstItem="gWs-vk-CWb" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="20" symbolic="YES" type="default" id="1E3-6f-P4B"/>
-                                    <constraint firstItem="qca-QR-ona" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="241" id="3Pc-7l-9sF"/>
+                                    <constraint firstItem="qca-QR-ona" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="241" id="1s6-19-6RG"/>
                                     <constraint firstItem="xXz-JX-TpG" firstAttribute="leading" secondItem="hRH-3d-f4G" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="3Tg-eb-C9E"/>
                                     <constraint firstItem="nSB-3e-GdJ" firstAttribute="bottom" secondItem="lTb-ra-hzM" secondAttribute="bottom" type="default" id="7nb-eH-Dku"/>
+                                    <constraint firstItem="syR-mk-m1O" firstAttribute="top" secondItem="qca-QR-ona" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="B55-0U-TZB"/>
                                     <constraint firstAttribute="trailing" secondItem="waC-wn-kAs" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="BqB-ia-6XB"/>
                                     <constraint firstItem="waC-wn-kAs" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="157" id="EHy-Rz-8Ul"/>
                                     <constraint firstAttribute="trailing" secondItem="xyz-kw-HFO" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="EM5-fk-ySf"/>
                                     <constraint firstItem="hRH-3d-f4G" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="M3A-N3-X7R"/>
+                                    <constraint firstItem="xXz-JX-TpG" firstAttribute="trailing" secondItem="w0P-9J-kpO" secondAttribute="trailing" type="default" id="MHg-tV-xsJ"/>
                                     <constraint firstItem="gWs-vk-CWb" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="27" id="NO1-hL-CjN"/>
                                     <constraint firstAttribute="trailing" secondItem="nSB-3e-GdJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="NTp-JJ-uVM"/>
                                     <constraint firstItem="xyz-kw-HFO" firstAttribute="top" secondItem="nSB-3e-GdJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QQC-Dg-71d"/>
                                     <constraint firstItem="LCy-uV-5vP" firstAttribute="leading" secondItem="hRH-3d-f4G" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Sic-uS-LJe"/>
                                     <constraint firstItem="hRH-3d-f4G" firstAttribute="baseline" secondItem="xXz-JX-TpG" secondAttribute="baseline" type="default" id="StN-cz-QNL"/>
+                                    <constraint firstItem="w0P-9J-kpO" firstAttribute="centerY" secondItem="syR-mk-m1O" secondAttribute="centerY" type="default" id="UHQ-fh-FAZ"/>
                                     <constraint firstItem="LCy-uV-5vP" firstAttribute="trailing" secondItem="Tcf-nA-jAc" secondAttribute="trailing" type="default" id="YOE-d9-r1x"/>
                                     <constraint firstItem="xXz-JX-TpG" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="197" id="ZQu-rZ-NaS"/>
                                     <constraint firstItem="nSB-3e-GdJ" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="44" id="aJj-vN-IYN"/>
                                     <constraint firstItem="lTb-ra-hzM" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="c2G-Tv-wq2"/>
+                                    <constraint firstItem="syR-mk-m1O" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cQV-c2-nDk"/>
                                     <constraint firstItem="FL6-j0-r7z" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fnY-cU-Wbj"/>
                                     <constraint firstItem="LCy-uV-5vP" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="196" id="gml-B4-C8w"/>
-                                    <constraint firstAttribute="bottom" secondItem="qca-QR-ona" secondAttribute="bottom" constant="242" id="jHH-HM-Py2"/>
                                     <constraint firstItem="f3Y-Vc-05p" firstAttribute="baseline" secondItem="Tcf-nA-jAc" secondAttribute="baseline" type="default" id="jQQ-G1-sSC"/>
                                     <constraint firstItem="Tcf-nA-jAc" firstAttribute="top" secondItem="xyz-kw-HFO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="l7k-Kj-AP0"/>
                                     <constraint firstItem="FL6-j0-r7z" firstAttribute="top" secondItem="N9V-Rn-H1J" secondAttribute="top" constant="124" id="qrP-4y-Kov"/>
@@ -437,6 +457,7 @@
                                     <constraint firstItem="xyz-kw-HFO" firstAttribute="leading" secondItem="Tcf-nA-jAc" secondAttribute="leading" type="default" id="xgT-0d-yHh"/>
                                     <constraint firstItem="f3Y-Vc-05p" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yxF-Uq-UNe"/>
                                     <constraint firstItem="4s4-10-mxh" firstAttribute="leading" secondItem="N9V-Rn-H1J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zTq-R5-1Ej"/>
+                                    <constraint firstAttribute="bottom" secondItem="w0P-9J-kpO" secondAttribute="bottom" constant="210" id="zsK-3M-AfL"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -450,6 +471,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="8CY-0y-iQa"/>
                     <connections>
+                        <outlet property="EmailSwitch" destination="w0P-9J-kpO" id="j7V-S2-2qh"/>
                         <outlet property="emailField" destination="xyz-kw-HFO" id="fUz-De-ysg"/>
                         <outlet property="hospitalField" destination="waC-wn-kAs" id="BpJ-bv-R6J"/>
                         <outlet property="nameField" destination="nSB-3e-GdJ" id="BGM-Ve-PNL"/>
@@ -467,6 +489,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GenerableViewController.h"/>
             <relationships>
                 <relationship kind="action" name="submitPressed:"/>
+                <relationship kind="outlet" name="submitButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -493,6 +516,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="fieldChanged:"/>
+                <relationship kind="outlet" name="EmailSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="hospitalField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
@@ -503,6 +527,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="reportNow:"/>
                 <relationship kind="outlet" name="incidentTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
             </relationships>
@@ -513,4 +538,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="SVp-D7-v2H"/>
+    </inferredMetricsTieBreakers>
 </document>
