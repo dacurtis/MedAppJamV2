@@ -112,7 +112,6 @@ numberOfRowsInComponent:(NSInteger)component
         NSString *desc = [descriptionField text];
         Incident *incident = [[Incident alloc] initWithName:desc atTime:[NSDate date]];
         [[GlobalVars getVar].incidentQueue addIncident:incident];
-        NSLog(@"%d", [[GlobalVars getVar].incidentQueue size]);
         
         UILocalNotification *notification = [[UILocalNotification alloc] init];
         [notification setFireDate: [NSDate dateWithTimeIntervalSinceNow: 5]];

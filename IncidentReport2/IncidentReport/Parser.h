@@ -10,8 +10,8 @@
 
 @interface Parser : NSObject
 @property (weak, nonatomic)NSString *hospital;
-@property (weak, nonatomic)NSString *formString;
 @property (nonatomic, retain) NSString *response;
+@property (nonatomic) BOOL isDone;
 - (Parser*) initWithHospital:(NSString *) hospital;
-- (void) initializeFormQuestionArray;
+- (BOOL) initializeFormQuestionArray;
 @end

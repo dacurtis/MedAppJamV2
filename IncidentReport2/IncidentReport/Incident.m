@@ -30,6 +30,7 @@
         self.title = title;
         self.time = date;
         self.gradualNotification = NO;
+        self.formQuestions = [[NSMutableArray alloc] init];
         if (reminderPeriod == 0) {
             self.gradualNotification = YES;
             //self.reminderPeriod = 1;

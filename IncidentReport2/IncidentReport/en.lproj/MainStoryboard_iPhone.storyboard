@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mhe-MH-CBx">
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mhe-MH-CBx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
@@ -226,20 +227,19 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="searchForForm:" destination="0Cm-Ld-kht" eventType="touchUpInside" id="S0p-8X-rCj"/>
-                                            <segue destination="vBa-pf-WZ4" kind="push" id="lay-1I-HtL"/>
+                                            <action selector="searchForForm:" destination="0Cm-Ld-kht" eventType="touchUpInside" id="Ats-DN-KTq"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="4QM-Ph-iAj" firstAttribute="top" secondItem="VDj-72-YIa" secondAttribute="top" constant="193" id="7bE-72-IFd"/>
+                                    <constraint firstItem="4QM-Ph-iAj" firstAttribute="top" secondItem="VDj-72-YIa" secondAttribute="top" constant="247" id="0Zz-bd-D7M"/>
                                     <constraint firstItem="wzH-VH-gbk" firstAttribute="leading" secondItem="VDj-72-YIa" secondAttribute="leading" constant="54" id="9TM-ZD-TjW"/>
-                                    <constraint firstAttribute="bottom" secondItem="4QM-Ph-iAj" secondAttribute="bottom" constant="268" id="C5G-uk-Iv6"/>
                                     <constraint firstItem="dkV-AM-nCV" firstAttribute="leading" secondItem="VDj-72-YIa" secondAttribute="leading" constant="30" id="Cko-kl-iU0"/>
                                     <constraint firstAttribute="trailing" secondItem="wzH-VH-gbk" secondAttribute="trailing" constant="43" id="oNc-Y5-9Qg"/>
                                     <constraint firstItem="wzH-VH-gbk" firstAttribute="top" secondItem="dkV-AM-nCV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rO3-7X-wh1"/>
+                                    <constraint firstAttribute="bottom" secondItem="4QM-Ph-iAj" secondAttribute="bottom" constant="214" id="raF-HM-Is1"/>
                                     <constraint firstItem="dkV-AM-nCV" firstAttribute="top" secondItem="VDj-72-YIa" secondAttribute="top" constant="105" id="wrt-r8-irT"/>
-                                    <constraint firstItem="4QM-Ph-iAj" firstAttribute="trailing" secondItem="wzH-VH-gbk" secondAttribute="trailing" type="default" id="wzv-lO-ak2"/>
+                                    <constraint firstItem="4QM-Ph-iAj" firstAttribute="centerX" secondItem="VDj-72-YIa" secondAttribute="centerX" type="default" id="xMg-MD-Fsf"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -255,13 +255,14 @@
                     <connections>
                         <outlet property="goButton" destination="4QM-Ph-iAj" id="KIr-eS-CNf"/>
                         <outlet property="hospitalField" destination="wzH-VH-gbk" id="6Pf-Tl-b8B"/>
+                        <segue destination="vBa-pf-WZ4" kind="push" identifier="goToForm" id="SVp-D7-v2H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aja-yw-8Da" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="95" y="-530"/>
         </scene>
-        <!--Generable View Controller-->
+        <!--Generable View Controller - Report Form-->
         <scene sceneID="jrL-TR-X9V">
             <objects>
                 <viewController id="vBa-pf-WZ4" customClass="GenerableViewController" sceneMemberID="viewController">
@@ -270,7 +271,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hAd-Pt-aQh"/>
+                    <navigationItem key="navigationItem" title="Report Form" id="hAd-Pt-aQh">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" style="done" id="d4y-Z5-kuI">
+                            <connections>
+                                <action selector="submitPressed:" destination="vBa-pf-WZ4" id="G7u-ZM-dLA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISr-kH-19k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

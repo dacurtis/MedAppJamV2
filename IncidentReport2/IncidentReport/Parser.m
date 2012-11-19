@@ -8,10 +8,10 @@
 
 #import "Parser.h"
 #import "CurrentIncident.h"
-
+#import "FormQuestion.h"
 @implementation Parser
 @synthesize response;
-@synthesize hospital;
+@synthesize hospital,isDone;
 
 - (Parser*) initWithHospital:(NSString *) hospital{
     self  = [super init];
@@ -26,15 +26,10 @@
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
-    if(connection)
-    {
-        
-    }
-    else{
-        
-    }
+
     return self;
+    
+    
 }
 
 - (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
@@ -52,10 +47,29 @@
      CODE TO TAKE THE CURRENT INCIDENT AND SET EACH VALUE IN ITS FORM QUESTION
      ARRAY TO THE VALUES FROM THE PARSE STRING GOES HERE
      */
-    NSArray * questions = [self.formString componentsSeparatedByString:@"~"];
-    for (NSString * question in questions){
-        
+
+    NSArray * questions = [self.response componentsSeparatedByString:@"~"];
+    NSMutableArray *arrayOfFormQuestions = [[NSMutableArray alloc] init];
+    //NSLog(@"questions in questions array %d", [questions count]);
+    //NSLog(response);
+    Incident *incident = [CurrentIncident getIncident].currentIncident;
+    [[incident formQuestions] addObject:@"work"];
+    //NSLog(@"current incident in parser: %@", [incident title]);
+    for (int i = 0; i < [questions count]; i++){
+        NSArray *qAndT = [[NSArray alloc] initWithArray:[[questions objectAtIndex:i] componentsSeparatedByString:@"|"]];
+        //NSLog(@"qandt count: %d", [qAndT count]);
+        NSString * q = [qAndT objectAtIndex:0];
+        //NSLog(q);
+        FormQuestion *fq = [[FormQuestion alloc] initWithQuestion:q withType:[qAndT objectAtIndex:1]];
+        //NSLog([fq question]);
+        //NSLog([qAndT objectAtIndex:1]);
+        [arrayOfFormQuestions addObject:fq];
+        //NSLog(@"size of aofq: %d", [arrayOfFormQuestions count]);
+        [incident setFormQuestions:arrayOfFormQuestions];
+        //NSLog(@"question %d in current incident array is %@", i, [[[incident formQuestions] objectAtIndex:i] question]);
     }
+    [[CurrentIncident getIncident].currentIncident setFormQuestions:[incident formQuestions]];
+    NSLog(@"count %d", [[[CurrentIncident getIncident].currentIncident formQuestions] count]);
     
 }
 @end

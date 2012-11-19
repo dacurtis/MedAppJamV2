@@ -114,7 +114,6 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(Incident *)sender {
-    if ([[segue identifier] isEqualToString:@"reportNow"])
-        [CurrentIncident getIncident].currentIncident = sender;
+    [CurrentIncident getIncident].currentIncident = sender;
 }
 @end
