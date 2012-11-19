@@ -124,6 +124,14 @@ numberOfRowsInComponent:(NSInteger)component
         [[UIApplication sharedApplication] scheduleLocalNotification:notification];
         
         [self.navigationController popToRootViewControllerAnimated:YES];
+        
+        NSString *em = [[[NSDictionary alloc] initWithContentsOfFile:[GlobalVars getVar].path] objectForKey:@"Email"];
+        
+        NSString *url = [@"http://108.66.96.158/email.php?t=" stringByAppendingString: em];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15];
+        [[NSURLConnection alloc] initWithRequest:request delegate:self];
+
+        
     }
     else if (false); //for other buttons
 }
